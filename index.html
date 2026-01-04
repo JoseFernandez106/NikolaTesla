@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikola Tesla - El Genio Visionario</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Variables y reset */
+        :root {
+            --primary-color: #1a237e;
+            --primary-dark: #0d153d;
+            --secondary-color: #4a148c;
+            --accent-color: #00bcd4;
+            --accent-light: #80deea;
+            --light-color: #f5f5f5;
+            --dark-color: #121212;
+            --text-color: #333;
+            --text-light: #777;
+            --border-color: #ddd;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.25);
+            --border-radius: 12px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            --transition-slow: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            padding-top: 80px;
+            overflow-x: hidden;
+        }
+
+        /* Efectos de entrada */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: var(--shadow);
+            }
+            50% {
+                transform: scale(1.03);
+                box-shadow: var(--shadow-hover);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: var(--shadow);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes spark {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        /* Header y navegación */
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            padding: 15px 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(26, 35, 126, 0.95);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 10px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
+        }
+
+        .logo:hover::before {
+            left: 100%;
+        }
+
+        .logo:hover {
+            transform: translateY(-3px);
+        }
+
+        .logo i {
+            color: var(--accent-color);
+            font-size: 2.2rem;
+            text-shadow: 0 0 15px rgba(0, 188, 212, 0.7);
+            animation: pulse 2s infinite;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 15px;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--accent-color);
+            transition: width 0.4s ease;
+        }
+
+        nav a:hover::before {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: var(--accent-light);
+            transform: translateY(-3px);
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 8px 20px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .search-container:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .search-container input {
+            background: transparent;
+            border: none;
+            color: white;
+            outline: none;
+            width: 200px;
+            font-size: 0.95rem;
+        }
+
+        .search-container input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .search-container button {
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 5px;
+        }
+
+        .search-container button:hover {
+            color: var(--accent-color);
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        /* Contenido principal con parallax */
+        .parallax-section {
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+            border-radius: var(--border-radius);
+        }
+
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background-image: url('https://images.unsplash.com/photo-1517976547714-720226b864c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            z-index: -2;
+            filter: brightness(0.5);
+        }
+
+        .parallax-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(26, 35, 126, 0.8), rgba(74, 20, 140, 0.7));
+            z-index: -1;
+        }
+
+        .parallax-content {
+            text-align: center;
+            color: white;
+            padding: 60px 40px;
+            max-width: 900px;
+            z-index: 1;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        .parallax-content h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+        }
+
+        .parallax-content p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        main {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        main:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Sidebar */
+        aside {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+            animation: fadeInRight 0.9s ease-out;
+            transition: var(--transition);
+        }
+
+        aside:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Títulos */
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-family: 'Roboto Slab', serif;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            animation: slideLine 3s infinite alternate;
+        }
+
+        @keyframes slideLine {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: calc(100% - 100px);
+            }
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        h3 {
+            font-size: 1.6rem;
+            margin-top: 30px;
+            animation: fadeInLeft 0.9s ease-out;
+        }
+
+        /* Párrafos y listas */
+        p {
+            margin-bottom: 20px;
+            text-align: justify;
+            animation: fadeInUp 0.7s ease-out;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.7s ease-out;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        li::before {
+            content: '⚡';
+            position: absolute;
+            left: -20px;
+            color: var(--accent-color);
+        }
+
+        /* Imágenes */
+        .img-container {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .main-img {
+            max-width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition-slow);
+            filter: grayscale(20%);
+        }
+
+        .main-img:hover {
+            transform: scale(1.02);
+            filter: grayscale(0%);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .img-caption {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-light);
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        /* Tablas */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .info-table th {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: left;
+            padding: 16px 20px;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-table th::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s;
+        }
+
+        .info-table tr:hover th::after {
+            left: 100%;
+        }
+
+        .info-table td {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .info-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .info-table tr:hover td {
+            background-color: #f0f7ff;
+            transform: translateX(5px);
+        }
+
+        /* Citas */
+        blockquote {
+            border-left: 4px solid var(--accent-color);
+            padding: 25px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--text-light);
+            background-color: #f8fdff;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            position: relative;
+            animation: fadeInLeft 0.9s ease-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        blockquote::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--accent-color);
+            opacity: 0.2;
+            position: absolute;
+            top: -20px;
+            left: 10px;
+            font-family: Georgia, serif;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 40px 0;
+            padding-left: 40px;
+            animation: fadeInLeft 1s ease-out;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border-left: 4px solid transparent;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+            border-left-color: var(--accent-color);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -43px;
+            top: 25px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 3px solid var(--accent-color);
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover::before {
+            transform: scale(1.3);
+            background-color: var(--accent-color);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
+        }
+
+        .timeline-year {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            display: inline-block;
+            padding: 5px 15px;
+            background-color: rgba(26, 35, 126, 0.1);
+            border-radius: 20px;
+        }
+
+        /* Tarjetas de inventos */
+        .inventions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 35px 0;
+        }
+
+        .invention-card {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .invention-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .invention-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .invention-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .invention-card h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .invention-card h4 i {
+            color: var(--accent-color);
+        }
+
+        /* Galería */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 35px 0;
+        }
+
+        .gallery-item {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: var(--transition);
+            height: 180px;
+            position: relative;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7));
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 1;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-slow);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Tabs */
+        .tabs {
+            margin: 40px 0;
+            animation: fadeInUp 0.9s ease-out;
+        }
+
+        .tab-buttons {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tab-btn {
+            padding: 15px 25px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-light);
+            transition: var(--transition);
+            border-bottom: 3px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 188, 212, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .tab-btn:hover::before {
+            left: 100%;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        .tab-btn:hover {
+            color: var(--primary-color);
+            background-color: rgba(0, 188, 212, 0.05);
+        }
+
+        .tab-content {
+            padding: 30px 0;
+        }
+
+        .tab-pane {
+            display: none;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-dark), var(--dark-color));
+            color: white;
+            padding: 60px 0 25px;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-col {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .footer-col h4 {
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-light);
+        }
+
+        .footer-col ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+            padding-left: 0;
+        }
+
+        .footer-col ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .footer-col a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent-color);
+            padding-left: 25px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 50px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Efectos de partículas en el footer */
+        .particle {
+            position: absolute;
+            background-color: rgba(0, 188, 212, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Responsividad */
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            aside {
+                position: static;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .parallax-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 140px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .inventions-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Utilidades */
+        .highlight {
+            background: linear-gradient(120deg, rgba(0, 188, 212, 0.15) 0%, rgba(0, 188, 212, 0.05) 100%);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+            color: var(--primary-color);
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(26, 35, 126, 0.3);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.7s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(26, 35, 126, 0.4);
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-color), #0097a7);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+        }
+
+        /* Sección de logros adicionales */
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .achievement-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid rgba(0, 188, 212, 0.2);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-color);
+        }
+
+        .achievement-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        /* Efectos de spark en títulos */
+        .spark-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .spark {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Modal para imágenes */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--accent-color);
+            transform: rotate(90deg);
+        }
+
+        /* Indicador de scroll */
+        .scroll-indicator {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(26, 35, 126, 0.5);
+            z-index: 100;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-indicator.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-indicator:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(26, 35, 126, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-bolt"></i>
+                <span>Nikola Tesla</span>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#biografia">Biografía</a></li>
+                    <li><a href="#inventos">Inventos</a></li>
+                    <li><a href="#legado">Legado</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#logros">Logros</a></li>
+                </ul>
+            </nav>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar en TeslaWiki...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección parallax -->
+    <div class="parallax-section">
+        <div class="parallax-bg"></div>
+        <div class="parallax-overlay"></div>
+        <div class="parallax-content">
+            <h1>Nikola Tesla <span class="badge">1856 - 1943</span></h1>
+            <p>El visionario que iluminó el mundo y soñó con un futuro de energía libre para toda la humanidad.</p>
+            <button class="btn" id="exploreBtn">Explorar su Legado</button>
+        </div>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <main>
+            <section id="inicio">
+                <h1>Nikola Tesla <span class="badge">El Genio Visionario</span></h1>
+                
+                <div class="img-container">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/N.Tesla.JPG/800px-N.Tesla.JPG" alt="Retrato de Nikola Tesla" class="main-img">
+                </div>
+                <p class="img-caption">Nikola Tesla en 1890, fotografía de Napoleon Sarony</p>
+                
+                <p><span class="highlight">Nikola Tesla</span> (en cirílico serbio: Никола Тесла; Smiljan, Imperio austríaco, actual Croacia; 10 de julio de 1856-Nueva York, 7 de enero de 1943) fue un inventor, ingeniero eléctrico y mecánico serbio nacionalizado estadounidense, conocido por sus contribuciones al diseño del moderno suministro de electricidad de corriente alterna (CA).</p>
+                
+                <p>Tesla, que nació y se crio en el Imperio austríaco, estudió ingeniería y física en la década de 1870 sin obtener un título, aunque adquirió experiencia práctica a principios de la década de 1880 trabajando en telefonía en la empresa Continental Edison en la nueva industria de la energía eléctrica. En 1884 emigró a los Estados Unidos, donde se nacionalizó ciudadano. Trabajó durante un corto tiempo en Edison Machine Works en Nueva York antes de emprender su propio camino.</p>
+                
+                <div class="tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="tab1">Datos clave</button>
+                        <button class="tab-btn" data-tab="tab2">Logros</button>
+                        <button class="tab-btn" data-tab="tab3">Citas famosas</button>
+                        <button class="tab-btn" data-tab="tab4">Patentes</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                            <table class="info-table">
+                                <tr>
+                                    <th>Campo</th>
+                                    <th>Información</th>
+                                </tr>
+                                <tr>
+                                    <td>Nacimiento</td>
+                                    <td>10 de julio de 1856, Smiljan, Imperio austríaco</td>
+                                </tr>
+                                <tr>
+                                    <td>Fallecimiento</td>
+                                    <td>7 de enero de 1943 (86 años), Nueva York, Estados Unidos</td>
+                                </tr>
+                                <tr>
+                                    <td>Nacionalidad</td>
+                                    <td>Austríaca (1856-1891), Estadounidense (1891-1943)</td>
+                                </tr>
+                                <tr>
+                                    <td>Área</td>
+                                    <td>Ingeniería eléctrica, ingeniería mecánica, física aplicada</td>
+                                </tr>
+                                <tr>
+                                    <td>Conocido por</td>
+                                    <td>Corriente alterna, motor de inducción, bobina de Tesla, radio, transferencia inalámbrica de energía</td>
+                                </tr>
+                                <tr>
+                                    <td>Patentes</td>
+                                    <td>Más de 300 en 26 países</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="tab-pane" id="tab2">
+                            <div class="achievements">
+                                <div class="achievement-card">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-bolt"></i>
+                                    </div>
+                                    <h4>Sistema de CA</h4>
+                                    <p>Diseñó el sistema moderno de suministro eléctrico de corriente alterna que usamos hoy en día.</p>
+                                </div>
+                                
+                                <div class="achievement-card">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-cogs"></i>
+                                    </div>
+                                    <h4>Motor de Inducción</h4>
+                                    <p>Inventó el motor de inducción de CA, fundamental para la industrialización mundial.</p>
+                                </div>
+                                
+                                <div class="achievement-card">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-satellite-dish"></i>
+                                    </div>
+                                    <h4>Radio</h4>
+                                    <p>Patentes fundamentales para la tecnología de radio, reconocidas por la Corte Suprema de EE.UU.</p>
+                                </div>
+                                
+                                <div class="achievement-card">
+                                    <div class="achievement-icon">
+                                        <i class="fas fa-tower-broadcast"></i>
+                                    </div>
+                                    <h4>Energía Inalámbrica</h4>
+                                    <p>Pionero en la transmisión inalámbrica de energía, un concepto que aún se investiga.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tab-pane" id="tab3">
+                            <blockquote>"El presente es de ustedes, pero el futuro, por el que tanto he trabajado, me pertenece."</blockquote>
+                            <blockquote>"No creo que haya ninguna emoción que atraviese el corazón humano como la que siente el inventor cuando ve alguna creación del cerebro desarrollarse hasta el éxito... Esas emociones hacen que un hombre se olvide de la comida, del sueño, de los amigos, del amor, de todo."</blockquote>
+                            <blockquote>"La ciencia no es más que perversión de sí misma a menos que tenga como objetivo final el mejoramiento de la humanidad."</blockquote>
+                            <blockquote>"Si quieres encontrar los secretos del universo, piensa en términos de energía, frecuencia y vibración."</blockquote>
+                        </div>
+                        
+                        <div class="tab-pane" id="tab4">
+                            <p>Tesla registró más de 300 patentes en 26 países diferentes. Sus patentes cubrían una amplia gama de inventos que incluían:</p>
+                            <ul>
+                                <li>Sistemas de distribución de energía eléctrica polifásicos</li>
+                                <li>Motores eléctricos de corriente alterna</li>
+                                <li>Dispositivos de iluminación eléctrica</li>
+                                <li>Transformadores y generadores eléctricos</li>
+                                <li>Comunicaciones inalámbricas</li>
+                                <li>Control remoto</li>
+                                <li>Robótica</li>
+                                <li>Aviones de despegue vertical</li>
+                            </ul>
+                            <p>Muchas de sus patentes fueron la base de industrias enteras que surgieron en el siglo XX.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="biografia">
+                <h2>Biografía</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">1856</div>
+                        <p>Nace en Smiljan, Imperio austríaco (actual Croacia), hijo de un sacerdote ortodoxo serbio y una madre inventora de pequeños aparatos domésticos. Su madre, Đuka Mandić, fue una gran influencia en su vida creativa.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1875</div>
+                        <p>Comienza sus estudios en la Universidad Politécnica de Graz, donde desarrolla un interés especial por la física y la electricidad. Allí observa por primera vez la Gramme Dynamo y concibe la idea del motor de inducción.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1882</div>
+                        <p>Trabaja en la Continental Edison Company en París, donde diseña mejoras para los equipos eléctricos de Edison. Aquí concibe la idea del motor de inducción mientras caminaba por un parque.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1884</div>
+                        <p>Emigra a los Estados Unidos con poco más que una carta de recomendación para Thomas Edison. La carta decía: "Conozco a dos grandes hombres, y usted es uno de ellos; el otro es este joven".</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1887</div>
+                        <p>Desarrolla el principio de su motor de inducción y comienza a trabajar con George Westinghouse, quien compra sus patentes de CA por $60,000 más regalías.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1893</div>
+                        <p>En la Exposición Mundial Colombina de Chicago, demuestra el sistema de corriente alterna, asegurando su adopción como estándar mundial. Ilumina la feria con 100,000 bombillas, algo nunca antes visto.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1899</div>
+                        <p>Establece un laboratorio en Colorado Springs para experimentar con electricidad de alto voltaje y alta frecuencia. Crea relámpagos artificiales de 40 metros y desarrolla la bobina Tesla de gran tamaño.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1901</div>
+                        <p>Comienza la construcción de la Wardenclyffe Tower en Long Island, diseñada para la transmisión inalámbrica de energía e información a través del mundo. J.P. Morgan financia inicialmente el proyecto con $150,000.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1915</div>
+                        <p>Se informa que Tesla y Edison compartirían el Premio Nobel de Física, pero el premio fue otorgado a otros. Se especula que Tesla rechazó compartirlo con Edison debido a su rivalidad.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1934</div>
+                        <p>Anuncia un "rayo de la muerte" (rayo de partículas cargadas) que, según él, podría derribar aviones a 400 km de distancia. Atrae la atención de gobiernos pero nunca se desarrolla completamente.</p>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-year">1943</div>
+                        <p>Fallece en la habitación 3327 del New Yorker Hotel a los 86 años. Su funeral tuvo lugar en la Catedral de San Juan el Divino en Nueva York, con más de 2,000 asistentes.</p>
+                    </div>
+                </div>
+                
+                <h3>Personalidad y vida personal</h3>
+                <p>Tesla era conocido por su excentricidad y sus peculiares hábitos. Era vegetariano en sus últimos años, afirmando que esta dieta mejoraba sus capacidades cognitivas. También tenía una memoria fotográfica excepcional y podía visualizar inventos complejos en su mente antes de construirlos.</p>
+                
+                <p>Aunque era sociable y encantador en sus años jóvenes, con el tiempo se volvió más solitario y excéntrico. Nunca se casó, afirmando que su celibato ayudaba a sus habilidades científicas. Sufrió de trastorno obsesivo-compulsivo, con una fijación por el número tres y una aversión extrema a los gérmenes. Siempre calculaba el volumen de los alimentos y bebidas que consumía, y usaba 18 servilletas para limpiar su vajilla.</p>
+            </section>
+            
+            <section id="inventos">
+                <h2>Inventos y Contribuciones Científicas</h2>
+                
+                <div class="inventions-grid">
+                    <div class="invention-card">
+                        <h4><i class="fas fa-bolt"></i> Corriente Alterna</h4>
+                        <p>Sistema polifásico de distribución eléctrica que se convirtió en el estándar mundial, superando el sistema de corriente continua de Edison. Permitió la transmisión de energía a largas distancias con menores pérdidas.</p>
+                    </div>
+                    
+                    <div class="invention-card">
+                        <h4><i class="fas fa-cogs"></i> Motor de Inducción</h4>
+                        <p>Motor eléctrico que funciona con corriente alterna, fundamental para la industrialización del siglo XX. Transformó la industria al proporcionar una fuente de energía rotativa eficiente y confiable.</p>
+                    </div>
+                    
+                    <div class="invention-card">
+                        <h4><i class="fas fa-fire"></i> Bobina de Tesla</h4>
+                        <p>Transformador resonante que produce corrientes de alto voltaje y alta frecuencia, utilizada en radio, televisión y equipos médicos. Capaz de crear espectaculares descargas eléctricas.</p>
+                    </div>
+                    
+                    <div class="invention-card">
+                        <h4><i class="fas fa-satellite-dish"></i> Radio</h4>
+                        <p>Aunque Marconi es más conocido, Tesla patentó tecnología fundamental para la radio antes que él. La Corte Suprema de EE.UU. reconoció sus patentes en 1943, poco después de su muerte.</p>
+                    </div>
+                    
+                    <div class="invention-card">
+                        <h4><i class="fas fa-gamepad"></i> Control Remoto</h4>
+                        <p>Demostró el primer barco controlado por radio en 1898 en el Madison Square Garden, sentando las bases para el control remoto moderno, drones y vehículos no tripulados.</p>
+                    </div>
+                    
+                    <div class="invention-card">
+                        <h4><i class="fas fa-wifi"></i> Energía Inalámbrica</h4>
+                        <p>Experimentó con la transmisión de energía eléctrica sin cables, un concepto que todavía se investiga hoy. Soñaba con un mundo donde la energía fuera libre y accesible para todos.</p>
+                    </div>
+                    
+                    <div class="invention-card">
+                        <h4><i class="fas fa-lightbulb"></i> Lámpara Fluorescente</h4>
+                        <p>Desarrolló lámparas de neón y fluorescentes antes de que fueran comercializadas, demostrando cómo los gases podían iluminarse con campos eléctricos de alta frecuencia.</p>
+                    </div>
+                    
+                    <div class="invention-card">
+                        <h4><i class="fas fa-turbine"></i> Turbina Tesla</h4>
+                        <p>Turbina sin álabes que utiliza el efecto de capa límite en lugar del impacto de fluido sobre álabes, con una eficiencia notablemente alta para su época.</p>
+                    </div>
+                </div>
+                
+                <h3>La "Guerra de las Corrientes"</h3>
+                <p>La Guerra de las Corrientes fue una disputa entre Thomas Edison (que promovía la corriente continua) y George Westinghouse/Tesla (que promovían la corriente alterna) sobre qué sistema debería ser el estándar para la transmisión de energía eléctrica.</p>
+                
+                <p>Edison lanzó una campaña de desprestigio contra la corriente alterna, argumentando que era peligrosa. Incluso promovió el uso de la silla eléctrica (que usaba CA) para asociar la corriente alterna con la muerte. Sin embargo, las ventajas técnicas de la CA para la transmisión a larga distancia finalmente prevalecieron, y el sistema de Tesla se convirtió en el estándar mundial.</p>
+                
+                <p>Esta guerra comercial y tecnológica definió el futuro de la distribución eléctrica y dejó a Tesla en una posición financiera difícil, a pesar de la victoria técnica de su sistema.</p>
+            </section>
+            
+            <section id="logros">
+                <h2>Logros y Reconocimientos</h2>
+                
+                <div class="achievements">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h4>Medalla Edison</h4>
+                        <p>Recibió la Medalla Edison de la IEEE en 1917, uno de los más altos honores en ingeniería eléctrica.</p>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h4>Doctorados Honoris Causa</h4>
+                        <p>Recibió doctorados honorarios de universidades como Columbia, Yale y la Universidad de París.</p>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4>Unidad Tesla</h4>
+                        <p>La unidad de densidad de flujo magnético en el SI se llama "tesla" (T) en su honor.</p>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h4>Tesla Motors</h4>
+                        <p>Elon Musk nombró a su empresa de vehículos eléctricos Tesla en honor al inventor.</p>
+                    </div>
+                </div>
+                
+                <p>Además de estos reconocimientos, Tesla fue miembro de numerosas sociedades científicas y recibió invitaciones para dar conferencias en las instituciones más prestigiosas del mundo. Aunque murió en relativa oscuridad y pobreza, su legado ha crecido exponencialmente en las décadas posteriores a su muerte.</p>
+            </section>
+            
+            <section id="legado">
+                <h2>Legado e Influencia</h2>
+                
+                <p>El legado de Tesla es inmenso, aunque no siempre fue reconocido durante su vida. Sus contribuciones sentaron las bases para el sistema eléctrico moderno y numerosas tecnologías que damos por sentadas hoy.</p>
+                
+                <h3>Reconocimientos póstumos</h3>
+                <ul>
+                    <li>La unidad de densidad de flujo magnético en el Sistema Internacional de Unidades se llama <span class="highlight">tesla</span> (símbolo T) en su honor.</li>
+                    <li>El cráter lunar Tesla y el asteroide (2244) Tesla llevan su nombre.</li>
+                    <li>En 2003, Elon Musk nombró a su empresa de coches eléctricos Tesla, Inc. en su honor.</li>
+                    <li>El Día de Nikola Tesla se celebra el 10 de julio (su cumpleaños) en Croacia y entre los entusiastas de la ciencia en todo el mundo.</li>
+                    <li>En 2013, el proyecto de financiación colectiva "The Oatmeal" recaudó $1.37 millones para comprar el sitio de Wardenclyffe y convertirlo en un museo.</li>
+                    <li>En 2020, el aeropuerto de Belgrado fue renombrado como Aeropuerto Nikola Tesla.</li>
+                    <li>Su imagen aparece en el billete de 100 dinares serbios.</li>
+                </ul>
+                
+                <h3>En la cultura popular</h3>
+                <p>Tesla ha sido representado en numerosas películas, series de televisión, libros y cómics. A menudo se le retrata como el "científico loco" arquetípico, aunque esta representación simplifica en exceso su compleja personalidad y contribuciones.</p>
+                
+                <p>En los últimos años, ha habido un resurgimiento del interés por Tesla, con documentales, biografías y exposiciones dedicadas a su vida y trabajo, corrigiendo en parte el olvido histórico que sufrió en comparación con figuras como Edison.</p>
+                
+                <p>Hoy, Tesla es visto como un visionario que anticipó muchas tecnologías del siglo XXI, desde la comunicación inalámbrica hasta las energías renovables y los vehículos eléctricos.</p>
+            </section>
+            
+            <section id="galeria">
+                <h2>Galería Visual</h2>
+                <p>Una colección de imágenes históricas que documentan la vida, inventos y legado de Nikola Tesla.</p>
+                
+                <div class="gallery">
+                    <div class="gallery-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Tesla_colorado.jpg" alt="Tesla en su laboratorio de Colorado Springs">
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://www.sectorelectricidad.com/wp-content/uploads/2014/05/tesla-electricidad-inalambrica7.gif" alt="Experimento de transmisión inalámbrica de energía">
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Tesla_Broadcast_Tower_1904.jpeg" alt="Torre Wardenclyffe">
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://content-historia.nationalgeographic.com.es/medio/2024/07/10/nikola-tesla_00000000_df1dc55d_240710162850_1280x1009.jpg" alt="Tesla pensativo">
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/TeslaOscillator.png" alt="Oscilador mecánico de Tesla">
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://www.endesa.com/content/dam/endesa-com/home/la-cara-e/autores/grafico%20nikola%20tesla.jpg.resize.414.250.center.center.jpeg" alt="Tesla con su equipo">
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Teslathinker.jpg/800px-Teslathinker.jpg" alt="Tesla pensando">
+                    </div>
+                    
+                    <div class="gallery-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Nikola_Tesla%2C_with_his_equipment_Wellcome_M0014782_-_restored.jpg/1280px-Nikola_Tesla%2C_with_his_equipment_Wellcome_M0014782_-_restored.jpg" alt="Tesla en su laboratorio">
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Sidebar -->
+        <aside>
+            <h3>Información Rápida</h3>
+            <table class="info-table">
+                <tr>
+                    <td><strong>Nombre</strong></td>
+                    <td>Nikola Tesla</td>
+                </tr>
+                <tr>
+                    <td><strong>Nacimiento</strong></td>
+                    <td>10 de julio de 1856</td>
+                </tr>
+                <tr>
+                    <td><strong>Fallecimiento</strong></td>
+                    <td>7 de enero de 1943</td>
+                </tr>
+                <tr>
+                    <td><strong>Nacionalidad</strong></td>
+                    <td>Serbio-estadounidense</td>
+                </tr>
+                <tr>
+                    <td><strong>Campo</strong></td>
+                    <td>Ingeniería eléctrica</td>
+                </tr>
+                <tr>
+                    <td><strong>Conocido por</strong></td>
+                    <td>Corriente alterna, motor de inducción</td>
+                </tr>
+                <tr>
+                    <td><strong>Patentes</strong></td>
+                    <td>300+ en 26 países</td>
+                </tr>
+            </table>
+            
+            <h3>Patentes Destacadas</h3>
+            <ul>
+                <li>Motor de CA (US381968, 1888)</li>
+                <li>Sistema de transmisión eléctrica (US390721, 1888)</li>
+                <li>Bobina de Tesla (US454622, 1891)</li>
+                <li>Radio (US645576, 1900)</li>
+                <li>Turbina sin álabes (US1061142, 1913)</li>
+                <li>Control remoto (US613809, 1898)</li>
+            </ul>
+            
+            <h3>Relaciones Clave</h3>
+            <ul>
+                <li><strong>Thomas Edison:</strong> Empleador y luego rival en la Guerra de las Corrientes</li>
+                <li><strong>George Westinghouse:</strong> Socio comercial que compró sus patentes de CA</li>
+                <li><strong>J.P. Morgan:</strong> Financiero inicial de la Torre Wardenclyffe</li>
+                <li><strong>Mark Twain:</strong> Amigo cercano y admirador de su trabajo</li>
+                <li><strong>Robert Underwood Johnson:</strong> Editor que ayudó a popularizar su trabajo</li>
+            </ul>
+            
+            <div class="img-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/TeslaSignature.svg/2560px-TeslaSignature.svg.png" alt="Firma de Nikola Tesla" style="width: 80%;">
+            </div>
+            <p class="img-caption">Firma de Nikola Tesla</p>
+            
+            <button class="btn" id="quizBtn">Probar Cuestionario Tesla</button>
+            <button class="btn" id="sparkBtn" style="margin-top: 15px; width: 100%;">Efecto Especial</button>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Sobre TeslaWiki</h4>
+                <p>TeslaWiki es un proyecto dedicado a preservar y difundir el legado de Nikola Tesla, con información verificada y accesible para todos.</p>
+                <p>Este sitio es educativo y sin fines de lucro, creado por entusiastas de la historia de la ciencia y la tecnología.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Enlaces Relacionados</h4>
+                <ul>
+                    <li><a href="https://www.teslasociety.com/" target="_blank">Tesla Society</a></li>
+                    <li><a href="https://tesla-museum.org/en/home/" target="_blank">Museo de Tesla en Belgrado</a></li>
+                    <li><a href="https://teslasciencecenter.org/" target="_blank">Centro de Ciencias Tesla</a></li>
+                    <li><a href="https://www.loc.gov/collections/nikola-tesla-papers/about-this-collection/" target="_blank">Papeles de Tesla en la Biblioteca del Congreso</a></li>
+                    <li><a href="https://www.ieee.org/" target="_blank">IEEE (Institute of Electrical and Electronics Engineers)</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h4>Referencias</h4>
+                <p>La información en este sitio proviene de:</p>
+                <ul>
+                    <li>Biblioteca del Congreso de EE.UU.</li>
+                    <li>Museo Nikola Tesla en Belgrado</li>
+                    <li>Biografías académicas autorizadas</li>
+                    <li>Patentes originales de Tesla</li>
+                    <li>Archivos históricos de la IEEE</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2026 TeslaWiki. Este sitio es para fines educativos. Todas las imágenes son de dominio público o se utilizan bajo licencias permisivas.</p>
+            <p>Diseñado con <i class="fas fa-heart" style="color: #e74c3c;"></i> para honrar el legado de Nikola Tesla | <span id="currentYear"></span></p>
+        </div>
+    </footer>
+
+    <!-- Modal para imágenes -->
+    <div class="modal" id="imageModal">
+        <span class="modal-close" id="modalClose">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Botón para ir arriba -->
+    <div class="scroll-indicator" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tabs functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all buttons and panes
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+                    
+                    // Add active class to current button and corresponding pane
+                    this.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Search functionality
+            const searchInput = document.getElementById('searchInput');
+            const searchBtn = document.getElementById('searchBtn');
+            
+            searchBtn.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+            
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                if (searchTerm) {
+                    const headings = document.querySelectorAll('h1, h2, h3, h4, p, li, td');
+                    
+                    let found = false;
+                    headings.forEach(element => {
+                        if (element.innerText.toLowerCase().includes(searchTerm)) {
+                            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            
+                            // Create a highlight effect
+                            const originalBg = element.style.backgroundColor;
+                            element.style.backgroundColor = 'rgba(255, 255, 0, 0.4)';
+                            element.style.transition = 'background-color 0.5s';
+                            
+                            setTimeout(() => {
+                                element.style.backgroundColor = originalBg;
+                            }, 3000);
+                            
+                            found = true;
+                        }
+                    });
+                    
+                    if (!found) {
+                        alert('No se encontraron resultados para: ' + searchTerm);
+                    }
+                }
+            }
+            
+            // Quiz functionality
+            const quizBtn = document.getElementById('quizBtn');
+            quizBtn.addEventListener('click', function() {
+                const questions = [
+                    {
+                        question: "¿En qué año nació Nikola Tesla?",
+                        options: ["1847", "1856", "1865", "1870"],
+                        answer: 1
+                    },
+                    {
+                        question: "¿Cuál fue su invento más famoso relacionado con la distribución de energía?",
+                        options: ["Corriente continua", "Pila eléctrica", "Corriente alterna", "Dinamo"],
+                        answer: 2
+                    },
+                    {
+                        question: "¿Con qué famoso inventor tuvo una 'guerra' tecnológica?",
+                        options: ["Alexander Graham Bell", "Thomas Edison", "Guglielmo Marconi", "Michael Faraday"],
+                        answer: 1
+                    },
+                    {
+                        question: "¿Cómo se llama la torre que Tesla construyó para experimentar con transmisión inalámbrica de energía?",
+                        options: ["Torre Eiffel", "Torre Wardenclyffe", "Torre Tesla", "Torre de energía"],
+                        answer: 1
+                    },
+                    {
+                        question: "¿Qué unidad de medida física lleva su nombre?",
+                        options: ["Unidad de voltaje", "Unidad de densidad de flujo magnético", "Unidad de resistencia", "Unidad de corriente"],
+                        answer: 1
+                    },
+                    {
+                        question: "¿En qué año murió Tesla?",
+                        options: ["1935", "1943", "1950", "1947"],
+                        answer: 1
+                    }
+                ];
+                
+                let score = 0;
+                
+                for (let i = 0; i < questions.length; i++) {
+                    const q = questions[i];
+                    const userAnswer = prompt(`${i+1}. ${q.question}\n\nOpciones:\n1. ${q.options[0]}\n2. ${q.options[1]}\n3. ${q.options[2]}\n4. ${q.options[3]}\n\nIntroduce el número de tu respuesta (1-4):`);
+                    
+                    if (userAnswer && parseInt(userAnswer) === q.answer + 1) {
+                        score++;
+                    }
+                }
+                
+                let message = `¡Cuestionario completado!\nObtuviste ${score} de ${questions.length} respuestas correctas.\n`;
+                
+                if (score === questions.length) {
+                    message += '¡Excelente! Eres un verdadero experto en Tesla. ⚡';
+                } else if (score >= questions.length/2) {
+                    message += 'Buen trabajo, pero hay más que aprender sobre este genio inventor.';
+                } else {
+                    message += 'Te recomiendo explorar más esta página para aprender sobre este genio inventor.';
+                }
+                
+                alert(message);
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 120,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Image gallery modal
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const modalClose = document.getElementById('modalClose');
+            
+            document.querySelectorAll('.gallery-item img').forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.style.display = 'flex';
+                    modalImage.src = this.src;
+                });
+            });
+            
+            modalClose.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+            
+            // Scroll to top button
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Explore button in parallax section
+            const exploreBtn = document.getElementById('exploreBtn');
+            exploreBtn.addEventListener('click', function() {
+                document.querySelector('#inicio').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Spark effect button
+            const sparkBtn = document.getElementById('sparkBtn');
+            sparkBtn.addEventListener('click', function() {
+                createSparks();
+            });
+            
+            function createSparks() {
+                const colors = ['#00bcd4', '#4a148c', '#1a237e', '#80deea'];
+                
+                for (let i = 0; i < 20; i++) {
+                    const spark = document.createElement('div');
+                    spark.classList.add('spark');
+                    
+                    // Random position
+                    const x = Math.random() * window.innerWidth;
+                    const y = Math.random() * window.innerHeight;
+                    
+                    // Random color
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    
+                    spark.style.left = `${x}px`;
+                    spark.style.top = `${y}px`;
+                    spark.style.backgroundColor = color;
+                    spark.style.width = `${Math.random() * 30 + 10}px`;
+                    spark.style.height = spark.style.width;
+                    
+                    document.body.appendChild(spark);
+                    
+                    // Animate spark
+                    spark.animate([
+                        { transform: 'scale(0) rotate(0deg)', opacity: 1 },
+                        { transform: `scale(1) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                    ], {
+                        duration: Math.random() * 1000 + 500,
+                        easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)'
+                    });
+                    
+                    // Remove spark after animation
+                    setTimeout(() => {
+                        spark.remove();
+                    }, 1500);
+                }
+            }
+            
+            // Set current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Add particles to footer
+            function createParticles() {
+                const footer = document.querySelector('footer');
+                
+                for (let i = 0; i < 15; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    // Random size and position
+                    const size = Math.random() * 10 + 5;
+                    const left = Math.random() * 100;
+                    const top = Math.random() * 100;
+                    
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.left = `${left}%`;
+                    particle.style.top = `${top}%`;
+                    particle.style.opacity = Math.random() * 0.5 + 0.1;
+                    
+                    // Add animation
+                    particle.style.animation = `float ${Math.random() * 10 + 10}s infinite ease-in-out`;
+                    particle.style.animationDelay = `${Math.random() * 5}s`;
+                    
+                    footer.appendChild(particle);
+                }
+            }
+            
+            createParticles();
+            
+            // Add hover effects to invention cards with delay
+            const inventionCards = document.querySelectorAll('.invention-card');
+            inventionCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+            });
+            
+            // Add parallax effect to background
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const parallaxBg = document.querySelector('.parallax-bg');
+                
+                if (parallaxBg) {
+                    parallaxBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            });
+            
+            // Add typing effect to search placeholder
+            const searchPlaceholder = "Buscar en TeslaWiki...";
+            let i = 0;
+            
+            function typePlaceholder() {
+                if (i < searchPlaceholder.length) {
+                    searchInput.placeholder = searchPlaceholder.substring(0, i + 1);
+                    i++;
+                    setTimeout(typePlaceholder, 50);
+                }
+            }
+            
+            // Start typing effect after a delay
+            setTimeout(typePlaceholder, 1000);
+        });
+    </script>
+</body>
+</html>
