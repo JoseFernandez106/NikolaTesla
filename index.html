@@ -3,42 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikola Tesla - El Genio Visionario</title>
-    <!-- Agrega esto en el <head>, debajo del <title> -->
-    <!-- Set completo de favicons para todos los dispositivos -->
+    <title>⚡ Nikola Tesla - El Genio Visionario</title>
+    <meta name="description" content="Descubre la vida y legado de Nikola Tesla, el visionario que iluminó el mundo">
+    
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://m.media-amazon.com/images/I/710oGjn01AL.jpg">
     <link rel="icon" type="image/png" sizes="32x32" href="https://m.media-amazon.com/images/I/710oGjn01AL.jpg">
     <link rel="icon" type="image/png" sizes="16x16" href="https://m.media-amazon.com/images/I/710oGjn01AL.jpg">
-    <link rel="manifest" href="https://i.imgur.com/FAKEURL/manifest.json">
-    <meta name="theme-color" content="#1a237e">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet">
+    
     <style>
-        /* Variables y reset */
-        :root {
-            --primary-color: #1a237e;
-            --primary-dark: #0d153d;
-            --secondary-color: #4a148c;
-            --accent-color: #00bcd4;
-            --accent-light: #80deea;
-            --light-color: #f5f5f5;
-            --dark-color: #121212;
-            --text-color: #333;
-            --text-light: #777;
-            --border-color: #ddd;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.25);
-            --border-radius: 12px;
-            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            --transition-slow: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
-        }
-
-        * {
+        /* ============================================
+           RESET & BASE STYLES
+           ============================================ */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        :root {
+            --purple-400: #a78bfa;
+            --purple-500: #8b5cf6;
+            --purple-600: #7c3aed;
+            --pink-400: #f472b6;
+            --pink-500: #ec4899;
+            --pink-600: #db2777;
+            --orange-400: #fb923c;
+            --orange-500: #f97316;
+            --cyan-400: #22d3ee;
+            --cyan-500: #06b6d4;
+            --blue-500: #3b82f6;
+            --green-500: #22c55e;
+            --yellow-500: #eab308;
+            --red-500: #ef4444;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --gray-950: #030712;
+            --electric-blue: #00bcd4;
+            --electric-light: #80deea;
+            --dark-accent: #1a237e;
         }
 
         html {
@@ -46,298 +57,925 @@
         }
 
         body {
-            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
-            color: var(--text-color);
-            background-color: var(--light-color);
-            padding-top: 80px;
-            overflow-x: hidden;
-        }
-
-        /* Efectos de entrada */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: var(--shadow);
-            }
-            50% {
-                transform: scale(1.03);
-                box-shadow: var(--shadow-hover);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: var(--shadow);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-        @keyframes spark {
-            0% {
-                transform: scale(0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1) rotate(180deg);
-                opacity: 0;
-            }
-        }
-
-        /* Header y navegación */
-        header {
-            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: var(--gray-950);
             color: white;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-            padding: 15px 0;
-            backdrop-filter: blur(10px);
-            background-color: rgba(26, 35, 126, 0.95);
-            animation: fadeInDown 0.8s ease-out;
+            overflow-x: hidden;
+            cursor: none;
+            padding-top: 80px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Scrollbar personalizado */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1a2e;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--purple-500), var(--electric-blue));
+            border-radius: 4px;
+        }
+
+        /* ============================================
+           KEYFRAME ANIMATIONS
+           ============================================ */
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+        }
+
+        @keyframes ping {
+            75%, 100% { transform: scale(2); opacity: 0; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25%); }
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        @keyframes ripple {
+            0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(20); opacity: 0; }
+        }
+
+        @keyframes morph {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            50% { border-radius: 40% 60% 60% 40% / 40% 50% 50% 60%; }
+            75% { border-radius: 60% 40% 50% 50% / 30% 60% 40% 70%; }
+        }
+
+        @keyframes aurora {
+            0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+            25% { transform: translate(10%, -10%) rotate(5deg) scale(1.1); }
+            50% { transform: translate(-5%, 5%) rotate(-3deg) scale(0.95); }
+            75% { transform: translate(-10%, -5%) rotate(2deg) scale(1.05); }
+        }
+
+        @keyframes scrollBounce {
+            0%, 100% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(8px); opacity: 0.5; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes neonPulse {
+            0%, 100% { 
+                box-shadow: 0 0 5px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
                 opacity: 1;
-                transform: translateY(0);
+            }
+            50% { 
+                box-shadow: 0 0 10px currentColor, 0 0 30px currentColor, 0 0 60px currentColor;
+                opacity: 0.8;
             }
         }
 
-        .header-container {
-            max-width: 1400px;
+        @keyframes textGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes slideLine {
+            0% { left: 0; }
+            100% { left: calc(100% - 100px); }
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        @keyframes loadingBar {
+            0% { transform: scaleX(0); transform-origin: left; }
+            50% { transform: scaleX(1); transform-origin: left; }
+            51% { transform-origin: right; }
+            100% { transform: scaleX(0); transform-origin: right; }
+        }
+
+        @keyframes shineEffect {
+            0% { left: -100%; }
+            100% { left: 200%; }
+        }
+
+        @keyframes cubeRotate {
+            0% { transform: rotateX(0) rotateY(0); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+
+        @keyframes wave {
+            0%, 100% { height: 20%; }
+            50% { height: 100%; }
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        
+        .container {
+            max-width: 1280px;
             margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--electric-blue), var(--purple-400), var(--cyan-400));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: textGradient 3s ease infinite;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, rgba(0, 188, 212, 0.15) 0%, rgba(0, 188, 212, 0.05) 100%);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+            color: var(--electric-blue);
+            border-left: 3px solid var(--electric-blue);
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--electric-blue), var(--purple-500));
+            color: white;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-left: 10px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+        }
+
+        /* ============================================
+           CUSTOM CURSOR
+           ============================================ */
+        
+        #cursor {
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            mix-blend-mode: difference;
+            transition: width 0.2s, height 0.2s;
+        }
+
+        #cursor-dot {
+            width: 24px;
+            height: 24px;
+            background: var(--electric-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 188, 212, 0.5);
+        }
+
+        #cursor.hovering #cursor-dot {
+            width: 60px;
+            height: 60px;
+            background: var(--purple-500);
+        }
+
+        #cursor.clicking #cursor-dot {
+            width: 16px;
+            height: 16px;
+            background: var(--pink-500);
+        }
+
+        #cursor-trail {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(0, 188, 212, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.15s ease-out;
+            mix-blend-mode: difference;
+        }
+
+        /* ============================================
+           LOADING SCREEN
+           ============================================ */
+        
+        #loading-screen {
+            position: fixed;
+            inset: 0;
+            background: var(--gray-950);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 100000;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        #loading-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-shape {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--electric-blue), var(--purple-500), var(--cyan-500));
+            animation: morph 2s ease-in-out infinite, float 3s ease-in-out infinite;
+            margin-bottom: 32px;
+        }
+
+        .loading-text {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 32px;
+        }
+
+        .loading-bar-container {
+            width: 256px;
+            height: 4px;
+            background: var(--gray-800);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .loading-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--electric-blue), var(--purple-500), var(--cyan-500));
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .loading-percent {
+            color: var(--gray-500);
+            font-size: 14px;
+            margin-top: 16px;
+        }
+
+        /* ============================================
+           SCROLL PROGRESS BAR
+           ============================================ */
+        
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            z-index: 9999;
+            background: rgba(31, 41, 55, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        #scroll-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--electric-blue), var(--purple-500), var(--pink-500));
+            width: 0%;
+            transition: width 0.15s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #scroll-progress-bar::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transform: skewX(-20deg) translateX(-200%);
+            animation: shineEffect 1.5s infinite;
+        }
+
+        /* ============================================
+           HEADER / NAVIGATION
+           ============================================ */
+        
+        #header {
+            position: fixed;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 96%;
+            max-width: 1280px;
+            z-index: 1000;
+            padding: 20px 24px;
+            border-radius: 16px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(17, 24, 39, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #header.scrolled {
+            padding: 12px 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 188, 212, 0.2);
+            border: 1px solid rgba(0, 188, 212, 0.2);
+        }
+
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 30px;
         }
 
         .logo {
+            font-size: 24px;
+            font-weight: 900;
             display: flex;
             align-items: center;
-            gap: 15px;
-            font-size: 1.9rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: var(--transition);
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 28px;
+            color: var(--electric-blue);
+            animation: pulse 2s infinite;
+        }
+
+        .nav-desktop {
+            display: none;
+            gap: 4px;
+        }
+
+        @media (min-width: 768px) {
+            .nav-desktop {
+                display: flex;
+            }
+        }
+
+        .nav-link {
             position: relative;
-            padding: 5px 10px;
+            padding: 8px 16px;
+            color: var(--gray-300);
+            transition: color 0.3s;
             border-radius: 8px;
             overflow: hidden;
         }
 
-        .logo::before {
+        .nav-link:hover {
+            color: white;
+        }
+
+        .nav-link::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.7s;
+            inset: 0;
+            background: rgba(0, 188, 212, 0.1);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+            border-radius: 8px;
         }
 
-        .logo:hover::before {
-            left: 100%;
+        .nav-link:hover::before {
+            transform: scaleX(1);
         }
 
-        .logo:hover {
-            transform: translateY(-3px);
-        }
-
-        .logo i {
-            color: var(--accent-color);
-            font-size: 2.2rem;
-            text-shadow: 0 0 15px rgba(0, 188, 212, 0.7);
-            animation: pulse 2s infinite;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            padding: 8px 15px;
-            border-radius: 6px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        nav a::before {
+        .nav-link::after {
             content: '';
             position: absolute;
             bottom: 0;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 0;
-            height: 3px;
-            background-color: var(--accent-color);
-            transition: width 0.4s ease;
+            height: 2px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--purple-400));
+            transition: width 0.3s;
+            border-radius: 2px;
         }
 
-        nav a:hover::before {
+        .nav-link:hover::after {
             width: 100%;
         }
 
-        nav a:hover {
-            color: var(--accent-light);
-            transform: translateY(-3px);
-        }
-
-        .search-container {
+        /* Hamburger Menu */
+        .hamburger {
             display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 32px;
+            height: 24px;
+            background: none;
+            border: none;
+            z-index: 1001;
+            padding: 0;
+        }
+
+        @media (min-width: 768px) {
+            .hamburger {
+                display: none;
+            }
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background: white;
+            transition: all 0.3s;
+            transform-origin: center;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(8px, -8px);
+        }
+
+        /* Mobile Menu */
+        #mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 7, 18, 0.98);
+            backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            padding: 8px 20px;
-            transition: var(--transition);
-            border: 1px solid transparent;
+            justify-content: center;
+            gap: 32px;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s;
         }
 
-        .search-container:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
+        #mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .search-container input {
-            background: transparent;
-            border: none;
+        #mobile-menu a {
+            font-size: 36px;
+            font-weight: 700;
             color: white;
-            outline: none;
-            width: 200px;
-            font-size: 0.95rem;
+            transition: color 0.3s, transform 0.3s;
+            transform: translateY(20px);
+            opacity: 0;
         }
 
-        .search-container input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+        #mobile-menu.active a {
+            transform: translateY(0);
+            opacity: 1;
         }
 
-        .search-container button {
-            background: transparent;
-            border: none;
-            color: white;
-            cursor: pointer;
-            transition: var(--transition);
-            padding: 5px;
+        #mobile-menu a:nth-child(1) { transition-delay: 0.1s; }
+        #mobile-menu a:nth-child(2) { transition-delay: 0.2s; }
+        #mobile-menu a:nth-child(3) { transition-delay: 0.3s; }
+        #mobile-menu a:nth-child(4) { transition-delay: 0.4s; }
+        #mobile-menu a:nth-child(5) { transition-delay: 0.5s; }
+        #mobile-menu a:nth-child(6) { transition-delay: 0.6s; }
+
+        #mobile-menu a:hover {
+            color: var(--electric-blue);
         }
 
-        .search-container button:hover {
-            color: var(--accent-color);
-            transform: rotate(15deg) scale(1.1);
-        }
-
-        /* Contenido principal con parallax */
-        .parallax-section {
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        
+        #hero {
             position: relative;
-            overflow: hidden;
-            min-height: 400px;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 40px 0;
-            border-radius: var(--border-radius);
+            overflow: hidden;
         }
 
-        .parallax-bg {
+        /* Aurora Background */
+        .aurora {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 120%;
-            background-image: url('https://images.unsplash.com/photo-1517976547714-720226b864c1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-            z-index: -2;
-            filter: brightness(0.5);
+            inset: -100%;
+            opacity: 0.5;
+            background: 
+                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(0, 188, 212, 0.3), transparent),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.3), transparent),
+                radial-gradient(ellipse 70% 50% at 50% 80%, rgba(34, 211, 238, 0.2), transparent);
+            animation: aurora 20s ease-in-out infinite;
         }
 
-        .parallax-overlay {
+        /* Particle Canvas */
+        #particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Grid Pattern */
+        .grid-pattern {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(26, 35, 126, 0.8), rgba(74, 20, 140, 0.7));
-            z-index: -1;
+            inset: 0;
+            opacity: 0.1;
+            background-image: 
+                linear-gradient(rgba(0, 188, 212, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px);
+            background-size: 50px 50px;
         }
 
-        .parallax-content {
+        /* Floating Shapes */
+        .floating-shapes {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .floating-shape {
+            position: absolute;
+            opacity: 0.2;
+            border-radius: 50%;
+        }
+
+        /* Hero Content */
+        .hero-content {
+            position: relative;
+            z-index: 10;
             text-align: center;
-            color: white;
-            padding: 60px 40px;
-            max-width: 900px;
-            z-index: 1;
-            animation: fadeInUp 1.2s ease-out;
+            padding: 0 24px;
+            max-width: 1200px;
         }
 
-        .parallax-content h1 {
-            font-size: 3.2rem;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-            color: white;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(4px);
+            border-radius: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 32px;
+            animation: fadeInDown 1s ease-out forwards;
+        }
+
+        .badge-dot {
+            position: relative;
+            width: 12px;
+            height: 12px;
+        }
+
+        .badge-dot::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--electric-blue);
+            border-radius: 50%;
+            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        .badge-dot::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--electric-blue);
+            border-radius: 50%;
+        }
+
+        .badge-text {
+            color: var(--electric-light);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: clamp(40px, 8vw, 100px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 32px;
+        }
+
+        .hero-title-main {
+            display: block;
+            background: linear-gradient(135deg, white 0%, var(--electric-blue) 50%, var(--purple-400) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        #typed-text {
+            min-height: 1.2em;
+        }
+
+        .cursor-blink {
+            display: inline-block;
+            width: 4px;
+            height: 0.8em;
+            background: var(--electric-blue);
+            margin-left: 8px;
+            animation: bounce 1s step-end infinite;
+            vertical-align: middle;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(18px, 2.5vw, 24px);
+            color: var(--gray-400);
+            margin-bottom: 48px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease-out 0.5s backwards;
+        }
+
+        .hero-subtitle span {
+            font-weight: 600;
+        }
+
+        .hero-subtitle .electric { color: var(--electric-blue); }
+        .hero-subtitle .purple { color: var(--purple-400); }
+        .hero-subtitle .cyan { color: var(--cyan-400); }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 80px;
+            animation: bounceIn 1s ease-out 0.8s backwards;
+        }
+
+        .btn {
+            position: relative;
+            padding: 16px 32px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 18px;
             border: none;
+            overflow: hidden;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .parallax-content p {
-            font-size: 1.3rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
+        .btn-primary {
+            background: linear-gradient(135deg, var(--electric-blue), var(--purple-600), var(--cyan-500));
+            color: white;
+            box-shadow: 0 20px 40px -10px rgba(0, 188, 212, 0.4);
         }
 
-        .container {
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -10px rgba(0, 188, 212, 0.6);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .btn-shine {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: skewX(-20deg) translateX(-200%);
+            transition: transform 0.7s;
+        }
+
+        .btn:hover .btn-shine {
+            transform: skewX(-20deg) translateX(200%);
+        }
+
+        .btn-ripple {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: ripple 0.6s linear;
+        }
+
+        /* Hero Stats */
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 1.2s backwards;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: clamp(24px, 4vw, 40px);
+            font-weight: 900;
+            color: white;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-top: 4px;
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            animation: fadeIn 1s ease-out 1.5s backwards;
+        }
+
+        .scroll-text {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--gray-500);
+        }
+
+        .scroll-mouse {
+            width: 24px;
+            height: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            padding: 8px;
+        }
+
+        .scroll-wheel {
+            width: 4px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 100px;
+            animation: scrollBounce 2s ease-in-out infinite;
+        }
+
+        /* ============================================
+           SECTION TITLE
+           ============================================ */
+        
+        .section {
+            padding: 128px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--electric-blue);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 6vw, 60px);
+            font-weight: 900;
+            color: white;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--purple-500));
+            animation: slideLine 3s infinite alternate;
+        }
+
+        .section-line {
+            width: 128px;
+            height: 6px;
+            background: linear-gradient(90deg, var(--electric-blue), var(--purple-500), var(--cyan-500));
+            margin: 0 auto;
+            border-radius: 100px;
+            transform: scaleX(0);
+            transition: transform 0.6s 0.3s;
+        }
+
+        .section-header.active .section-line {
+            transform: scaleX(1);
+        }
+
+        /* ============================================
+           CONTENT SECTIONS
+           ============================================ */
+        
+        .content-container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 30px;
@@ -347,101 +985,103 @@
             animation: fadeInUp 0.8s ease-out;
         }
 
+        @media (max-width: 1200px) {
+            .content-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
         main {
-            background-color: white;
-            border-radius: var(--border-radius);
+            background: rgba(31, 41, 55, 0.3);
+            backdrop-filter: blur(4px);
+            border-radius: 24px;
             padding: 40px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+            border: 1px solid rgba(55, 65, 81, 0.5);
+            transition: all 0.5s;
         }
 
         main:hover {
-            box-shadow: var(--shadow-hover);
+            border-color: rgba(0, 188, 212, 0.3);
+            box-shadow: 0 20px 40px -10px rgba(0, 188, 212, 0.1);
         }
 
         /* Sidebar */
         aside {
-            background-color: white;
-            border-radius: var(--border-radius);
+            background: rgba(31, 41, 55, 0.3);
+            backdrop-filter: blur(4px);
+            border-radius: 24px;
             padding: 25px;
-            box-shadow: var(--shadow);
+            border: 1px solid rgba(55, 65, 81, 0.5);
             height: fit-content;
             position: sticky;
             top: 100px;
             animation: fadeInRight 0.9s ease-out;
-            transition: var(--transition);
+            transition: all 0.5s;
+        }
+
+        @media (max-width: 1200px) {
+            aside {
+                position: static;
+            }
         }
 
         aside:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
+            border-color: rgba(0, 188, 212, 0.3);
+            box-shadow: 0 20px 40px -10px rgba(0, 188, 212, 0.1);
         }
 
-        /* Títulos */
-        h1, h2, h3, h4 {
-            color: var(--primary-color);
+        aside h3 {
+            color: var(--electric-blue);
+            font-size: 1.5rem;
             margin-bottom: 20px;
-            font-family: 'Roboto Slab', serif;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 188, 212, 0.3);
+        }
+
+        /* Headings */
+        h1, h2, h3, h4 {
+            color: white;
+            margin-bottom: 20px;
         }
 
         h1 {
             font-size: 2.8rem;
-            border-bottom: 3px solid var(--accent-color);
+            border-bottom: 3px solid var(--electric-blue);
             padding-bottom: 15px;
             margin-bottom: 25px;
             position: relative;
-            overflow: hidden;
-        }
-
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 100px;
-            height: 3px;
-            background-color: var(--secondary-color);
-            animation: slideLine 3s infinite alternate;
-        }
-
-        @keyframes slideLine {
-            0% {
-                left: 0;
-            }
-            100% {
-                left: calc(100% - 100px);
-            }
         }
 
         h2 {
             font-size: 2rem;
             margin-top: 40px;
             padding-bottom: 10px;
-            border-bottom: 1px solid var(--border-color);
-            animation: fadeInLeft 0.8s ease-out;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         h3 {
             font-size: 1.6rem;
             margin-top: 30px;
-            animation: fadeInLeft 0.9s ease-out;
         }
 
-        /* Párrafos y listas */
+        /* Paragraphs and Lists */
         p {
             margin-bottom: 20px;
             text-align: justify;
-            animation: fadeInUp 0.7s ease-out;
+            line-height: 1.7;
+            color: var(--gray-300);
         }
 
         ul, ol {
             margin-left: 25px;
             margin-bottom: 20px;
-            animation: fadeInUp 0.7s ease-out;
         }
 
         li {
             margin-bottom: 12px;
+            color: var(--gray-300);
             position: relative;
             padding-left: 10px;
         }
@@ -450,113 +1090,91 @@
             content: '⚡';
             position: absolute;
             left: -20px;
-            color: var(--accent-color);
+            color: var(--electric-blue);
         }
 
-        /* Imágenes */
+        /* Images */
         .img-container {
             display: flex;
             justify-content: center;
             margin: 30px 0;
-            animation: fadeInUp 1s ease-out;
         }
 
         .main-img {
             max-width: 100%;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition-slow);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s;
             filter: grayscale(20%);
         }
 
         .main-img:hover {
             transform: scale(1.02);
             filter: grayscale(0%);
-            box-shadow: var(--shadow-hover);
+            box-shadow: 0 30px 60px -10px rgba(0, 188, 212, 0.3);
         }
 
         .img-caption {
             text-align: center;
             font-style: italic;
-            color: var(--text-light);
+            color: var(--gray-500);
             margin-top: 15px;
             font-size: 0.95rem;
         }
 
-        /* Tablas */
+        /* Tables */
         .info-table {
             width: 100%;
             border-collapse: collapse;
             margin: 25px 0;
-            box-shadow: var(--shadow);
-            border-radius: var(--border-radius);
+            border-radius: 16px;
             overflow: hidden;
-            animation: fadeInUp 0.8s ease-out;
+            background: rgba(31, 41, 55, 0.5);
+            border: 1px solid rgba(55, 65, 81, 0.5);
         }
 
         .info-table th {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, var(--electric-blue), var(--purple-500));
             color: white;
             text-align: left;
             padding: 16px 20px;
             font-weight: 600;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .info-table th::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.7s;
-        }
-
-        .info-table tr:hover th::after {
-            left: 100%;
         }
 
         .info-table td {
             padding: 16px 20px;
-            border-bottom: 1px solid var(--border-color);
-            transition: var(--transition);
+            border-bottom: 1px solid rgba(55, 65, 81, 0.5);
+            color: var(--gray-300);
         }
 
         .info-table tr:nth-child(even) {
-            background-color: #f9f9f9;
+            background-color: rgba(31, 41, 55, 0.2);
         }
 
         .info-table tr:hover td {
-            background-color: #f0f7ff;
-            transform: translateX(5px);
+            background-color: rgba(0, 188, 212, 0.1);
         }
 
-        /* Citas */
+        /* Blockquotes */
         blockquote {
-            border-left: 4px solid var(--accent-color);
+            border-left: 4px solid var(--electric-blue);
             padding: 25px;
             margin: 30px 0;
             font-style: italic;
-            color: var(--text-light);
-            background-color: #f8fdff;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            color: var(--gray-300);
+            background: rgba(31, 41, 55, 0.3);
+            border-radius: 0 16px 16px 0;
             position: relative;
-            animation: fadeInLeft 0.9s ease-out;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
 
         blockquote::before {
             content: '"';
             font-size: 5rem;
-            color: var(--accent-color);
+            color: var(--electric-blue);
             opacity: 0.2;
             position: absolute;
             top: -20px;
             left: 10px;
-            font-family: Georgia, serif;
         }
 
         /* Timeline */
@@ -564,7 +1182,6 @@
             position: relative;
             margin: 40px 0;
             padding-left: 40px;
-            animation: fadeInLeft 1s ease-out;
         }
 
         .timeline::before {
@@ -574,7 +1191,7 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: linear-gradient(to bottom, var(--accent-color), var(--secondary-color));
+            background: linear-gradient(to bottom, var(--electric-blue), var(--purple-500));
             border-radius: 3px;
         }
 
@@ -582,17 +1199,16 @@
             position: relative;
             margin-bottom: 30px;
             padding: 20px;
-            background-color: white;
-            border-radius: var(--border-radius);
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
-            transition: var(--transition);
-            border-left: 4px solid transparent;
+            background: rgba(31, 41, 55, 0.3);
+            border-radius: 16px;
+            border: 1px solid rgba(55, 65, 81, 0.5);
+            transition: all 0.3s;
         }
 
         .timeline-item:hover {
             transform: translateX(10px);
-            border-left-color: var(--accent-color);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border-color: var(--electric-blue);
+            box-shadow: 0 10px 25px rgba(0, 188, 212, 0.1);
         }
 
         .timeline-item::before {
@@ -603,74 +1219,78 @@
             width: 16px;
             height: 16px;
             border-radius: 50%;
-            background-color: var(--primary-color);
-            border: 3px solid var(--accent-color);
+            background-color: var(--electric-blue);
+            border: 3px solid var(--purple-500);
             z-index: 2;
-            transition: var(--transition);
+            transition: all 0.3s;
         }
 
         .timeline-item:hover::before {
             transform: scale(1.3);
-            background-color: var(--accent-color);
-            border-color: var(--primary-color);
             box-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
         }
 
         .timeline-year {
             font-weight: bold;
-            color: var(--primary-color);
+            color: var(--electric-blue);
             margin-bottom: 10px;
             font-size: 1.2rem;
             display: inline-block;
             padding: 5px 15px;
-            background-color: rgba(26, 35, 126, 0.1);
+            background: rgba(0, 188, 212, 0.1);
             border-radius: 20px;
         }
 
-        /* Tarjetas de inventos */
-        .inventions-grid {
+        /* Cards */
+        .inventions-grid, .achievements {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 30px;
             margin: 35px 0;
         }
 
-        .invention-card {
-            background-color: #f8f9fa;
-            border-radius: var(--border-radius);
-            padding: 25px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border-top: 4px solid var(--accent-color);
-            position: relative;
-            overflow: hidden;
-            animation: fadeInUp 0.8s ease-out;
+        @media (max-width: 768px) {
+            .inventions-grid, .achievements {
+                grid-template-columns: 1fr;
+            }
         }
 
-        .invention-card::before {
+        .invention-card, .achievement-card {
+            background: rgba(31, 41, 55, 0.3);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid rgba(55, 65, 81, 0.5);
+            transition: all 0.3s;
+            border-top: 4px solid var(--electric-blue);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .invention-card::before, .achievement-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+            background: linear-gradient(90deg, var(--electric-blue), var(--purple-500));
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.5s ease;
         }
 
-        .invention-card:hover::before {
+        .invention-card:hover::before, .achievement-card:hover::before {
             transform: scaleX(1);
         }
 
-        .invention-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: var(--shadow-hover);
+        .invention-card:hover, .achievement-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--electric-blue);
+            box-shadow: 0 20px 40px -10px rgba(0, 188, 212, 0.2);
         }
 
-        .invention-card h4 {
-            color: var(--secondary-color);
+        .invention-card h4, .achievement-card h4 {
+            color: var(--electric-light);
             margin-bottom: 15px;
             font-size: 1.3rem;
             display: flex;
@@ -678,11 +1298,17 @@
             gap: 10px;
         }
 
-        .invention-card h4 i {
-            color: var(--accent-color);
+        .invention-card h4 i, .achievement-card h4 i {
+            color: var(--electric-blue);
         }
 
-        /* Galería */
+        .achievement-icon {
+            font-size: 2.5rem;
+            color: var(--electric-blue);
+            margin-bottom: 15px;
+        }
+
+        /* Gallery */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -690,15 +1316,19 @@
             margin: 35px 0;
         }
 
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+
         .gallery-item {
-            border-radius: var(--border-radius);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: var(--shadow);
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s;
             height: 180px;
             position: relative;
-            animation: fadeInUp 0.8s ease-out;
         }
 
         .gallery-item::before {
@@ -710,7 +1340,7 @@
             height: 100%;
             background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.7));
             opacity: 0;
-            transition: var(--transition);
+            transition: opacity 0.3s;
             z-index: 1;
         }
 
@@ -719,8 +1349,8 @@
         }
 
         .gallery-item:hover {
-            transform: scale(1.08) rotate(2deg);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transform: scale(1.08);
+            box-shadow: 0 15px 35px rgba(0, 188, 212, 0.3);
             z-index: 10;
         }
 
@@ -728,7 +1358,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: var(--transition-slow);
+            transition: transform 0.5s;
         }
 
         .gallery-item:hover img {
@@ -738,12 +1368,12 @@
         /* Tabs */
         .tabs {
             margin: 40px 0;
-            animation: fadeInUp 0.9s ease-out;
         }
 
         .tab-buttons {
             display: flex;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
         }
 
         .tab-btn {
@@ -752,8 +1382,8 @@
             border: none;
             cursor: pointer;
             font-weight: 600;
-            color: var(--text-light);
-            transition: var(--transition);
+            color: var(--gray-400);
+            transition: all 0.3s;
             border-bottom: 3px solid transparent;
             position: relative;
             overflow: hidden;
@@ -775,13 +1405,12 @@
         }
 
         .tab-btn.active {
-            color: var(--primary-color);
-            border-bottom-color: var(--accent-color);
+            color: var(--electric-blue);
+            border-bottom-color: var(--electric-blue);
         }
 
         .tab-btn:hover {
-            color: var(--primary-color);
-            background-color: rgba(0, 188, 212, 0.05);
+            color: var(--electric-light);
         }
 
         .tab-content {
@@ -797,276 +1426,142 @@
             display: block;
         }
 
-        /* Footer */
-        footer {
-            background: linear-gradient(135deg, var(--primary-dark), var(--dark-color));
-            color: white;
-            padding: 60px 0 25px;
-            margin-top: 80px;
+        /* ============================================
+           FOOTER
+           ============================================ */
+        
+        #footer {
+            background: var(--gray-950);
+            border-top: 1px solid var(--gray-800);
+            padding: 80px 0;
             position: relative;
             overflow: hidden;
         }
 
-        footer::before {
+        #footer::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(90deg, var(--accent-color), var(--primary-color));
+            background: linear-gradient(90deg, var(--electric-blue), var(--purple-500));
         }
 
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 30px;
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            position: relative;
-            z-index: 1;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 48px;
+            margin-bottom: 64px;
         }
 
-        .footer-col {
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        .footer-col h4 {
-            color: var(--accent-color);
-            margin-bottom: 25px;
-            font-size: 1.3rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-col h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--accent-light);
-        }
-
-        .footer-col ul {
-            list-style: none;
-            margin-left: 0;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-            padding-left: 0;
-        }
-
-        .footer-col ul li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-        }
-
-        .footer-col a {
-            color: #ccc;
-            text-decoration: none;
-            transition: var(--transition);
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .footer-col a:hover {
-            color: var(--accent-color);
-            padding-left: 25px;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            margin-top: 50px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 0.9rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Efectos de partículas en el footer */
-        .particle {
-            position: absolute;
-            background-color: rgba(0, 188, 212, 0.3);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        /* Responsividad */
-        @media (max-width: 1200px) {
-            .container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            aside {
-                position: static;
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1fr;
             }
         }
 
-        @media (max-width: 992px) {
-            .parallax-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .footer-brand h2 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 16px;
         }
 
-        @media (max-width: 768px) {
-            body {
-                padding-top: 140px;
-            }
-            
-            .header-container {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
-            
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            
-            .inventions-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
+        .footer-brand p {
+            color: var(--gray-400);
+            max-width: 400px;
+            line-height: 1.6;
+            margin-bottom: 24px;
         }
 
-        /* Utilidades */
-        .highlight {
-            background: linear-gradient(120deg, rgba(0, 188, 212, 0.15) 0%, rgba(0, 188, 212, 0.05) 100%);
-            padding: 4px 10px;
-            border-radius: 6px;
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            padding: 8px 16px;
+            background: var(--gray-800);
+            border-radius: 8px;
+            color: var(--gray-400);
+            font-size: 14px;
             font-weight: 500;
-            color: var(--primary-color);
-            border-left: 3px solid var(--accent-color);
+            transition: all 0.3s;
         }
 
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        .social-link:hover {
+            background: var(--electric-blue);
             color: white;
-            padding: 12px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(26, 35, 126, 0.3);
+            transform: translateY(-3px);
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.7s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(26, 35, 126, 0.4);
-        }
-
-        .badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent-color), #0097a7);
+        .footer-links h3 {
             color: white;
-            padding: 5px 15px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-left: 10px;
-            vertical-align: middle;
-            animation: pulse 2s infinite;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: var(--electric-blue);
         }
 
-        /* Sección de logros adicionales */
-        .achievements {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
-        .achievement-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            padding: 25px;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+        .footer-links a {
+            color: var(--gray-400);
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--electric-blue);
+        }
+
+        .footer-links a span {
+            transition: transform 0.3s;
+        }
+
+        .footer-links a:hover span {
+            transform: translateX(4px);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
             text-align: center;
-            border: 1px solid rgba(0, 188, 212, 0.2);
-            animation: fadeInUp 0.8s ease-out;
         }
 
-        .achievement-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--accent-color);
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
         }
 
-        .achievement-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 15px;
+        .footer-bottom p {
+            color: var(--gray-500);
+            font-size: 14px;
         }
 
-        /* Efectos de spark en títulos */
-        .spark-container {
-            position: relative;
+        .footer-heart {
+            color: var(--red-500);
+            animation: pulse 2s ease-in-out infinite;
             display: inline-block;
         }
 
-        .spark {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: var(--accent-color);
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        /* Modal para imágenes */
+        /* ============================================
+           MODAL
+           ============================================ */
+        
         .modal {
             display: none;
             position: fixed;
@@ -1074,23 +1569,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.95);
             z-index: 2000;
             justify-content: center;
             align-items: center;
             animation: fadeIn 0.3s ease-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
         .modal-content {
             max-width: 90%;
             max-height: 90%;
-            border-radius: 10px;
-            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         }
 
         .modal-close {
@@ -1100,20 +1590,23 @@
             color: white;
             font-size: 3rem;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.3s;
         }
 
         .modal-close:hover {
-            color: var(--accent-color);
+            color: var(--electric-blue);
             transform: rotate(90deg);
         }
 
-        /* Indicador de scroll */
-        .scroll-indicator {
+        /* ============================================
+           SCROLL TO TOP BUTTON
+           ============================================ */
+        
+        .scroll-indicator-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, var(--electric-blue), var(--purple-500));
             color: white;
             width: 50px;
             height: 50px;
@@ -1122,78 +1615,239 @@
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            box-shadow: 0 5px 20px rgba(26, 35, 126, 0.5);
+            box-shadow: 0 5px 20px rgba(0, 188, 212, 0.5);
             z-index: 100;
-            transition: var(--transition);
+            transition: all 0.3s;
             opacity: 0;
             visibility: hidden;
         }
 
-        .scroll-indicator.show {
+        .scroll-indicator-btn.show {
             opacity: 1;
             visibility: visible;
         }
 
-        .scroll-indicator:hover {
+        .scroll-indicator-btn:hover {
             transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 25px rgba(26, 35, 126, 0.6);
+            box-shadow: 0 10px 25px rgba(0, 188, 212, 0.6);
+        }
+
+        /* ============================================
+           RESPONSIVE ADJUSTMENTS
+           ============================================ */
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 140px;
+            }
+            
+            #header {
+                padding: 15px 20px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .logo {
+                font-size: 20px;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-header {
+                margin-bottom: 48px;
+            }
+            
+            .hero-stats {
+                gap: 16px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .tab-buttons {
+                flex-direction: column;
+            }
+            
+            .tab-btn {
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: clamp(32px, 8vw, 60px);
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            main, aside {
+                padding: 25px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div id="cursor">
+        <div id="cursor-dot"></div>
+    </div>
+    <div id="cursor-trail"></div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-shape"></div>
+        <h1 class="loading-text text-gradient">Nikola Tesla</h1>
+        <div class="loading-bar-container">
+            <div class="loading-bar" id="loading-bar"></div>
+        </div>
+        <p class="loading-percent" id="loading-percent">0%</p>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress">
+        <div id="scroll-progress-bar"></div>
+    </div>
+
     <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
+    <header id="header">
+        <div class="header-content">
+            <a href="#hero" class="logo text-gradient">
                 <i class="fas fa-bolt"></i>
                 <span>Nikola Tesla</span>
-            </div>
+            </a>
             
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#biografia">Biografía</a></li>
-                    <li><a href="#inventos">Inventos</a></li>
-                    <li><a href="#legado">Legado</a></li>
-                    <li><a href="#galeria">Galería</a></li>
-                    <li><a href="#logros">Logros</a></li>
-                </ul>
+            <nav class="nav-desktop">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#biografia" class="nav-link">Biografía</a>
+                <a href="#inventos" class="nav-link">Inventos</a>
+                <a href="#logros" class="nav-link">Logros</a>
+                <a href="#legado" class="nav-link">Legado</a>
+                <a href="#galeria" class="nav-link">Galería</a>
             </nav>
-            
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Buscar en TeslaWiki...">
-                <button id="searchBtn"><i class="fas fa-search"></i></button>
-            </div>
+
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
-    <!-- Sección parallax -->
-    <div class="parallax-section">
-        <div class="parallax-bg"></div>
-        <div class="parallax-overlay"></div>
-        <div class="parallax-content">
-            <h1>Nikola Tesla <span class="badge">1856 - 1943</span></h1>
-            <p>El visionario que iluminó el mundo y soñó con un futuro de energía libre para toda la humanidad.</p>
-            <button class="btn" id="exploreBtn">Explorar su Legado</button>
-        </div>
-    </div>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#biografia">Biografía</a>
+        <a href="#inventos">Inventos</a>
+        <a href="#logros">Logros</a>
+        <a href="#legado">Legado</a>
+        <a href="#galeria">Galería</a>
+    </nav>
 
-    <!-- Contenido principal -->
-    <div class="container">
+    <!-- Particle Canvas -->
+    <canvas id="particles"></canvas>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="aurora"></div>
+        <div class="grid-pattern"></div>
+        
+        <div class="floating-shapes">
+            <div class="floating-shape" style="width: 200px; height: 200px; left: 10%; top: 20%; background: linear-gradient(135deg, rgba(0,188,212,0.3), rgba(139,92,246,0.3)); animation: float 15s ease-in-out infinite;"></div>
+            <div class="floating-shape" style="width: 150px; height: 150px; right: 15%; top: 30%; background: linear-gradient(135deg, rgba(139,92,246,0.3), rgba(236,72,153,0.3)); border-radius: 30%; animation: float 12s ease-in-out infinite 2s;"></div>
+            <div class="floating-shape" style="width: 100px; height: 100px; left: 20%; bottom: 20%; background: linear-gradient(135deg, rgba(34,211,238,0.3), rgba(59,130,246,0.3)); animation: float 10s ease-in-out infinite 1s;"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <div class="badge-dot"></div>
+                <span class="badge-text">El Genio Visionario</span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="hero-title-main" id="typed-text"></span>
+                <span class="cursor-blink"></span>
+            </h1>
+
+            <p class="hero-subtitle">
+                El visionario que <span class="electric">iluminó el mundo</span> y soñó con un futuro de 
+                <span class="purple">energía libre</span> para toda la humanidad.
+            </p>
+
+            <div class="cta-buttons">
+                <button class="btn btn-primary" id="exploreBtn" data-magnetic>
+                    <span class="btn-shine"></span>
+                    <span>Explorar Legado</span>
+                    <span>→</span>
+                </button>
+                <button class="btn btn-secondary" id="quizBtn" data-magnetic>
+                    <span class="btn-shine"></span>
+                    <span>Cuestionario Tesla</span>
+                </button>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-value">300+</div>
+                    <div class="stat-label">Patentes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">26</div>
+                    <div class="stat-label">Países</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">86</div>
+                    <div class="stat-label">Años de Vida</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span class="scroll-text">Scroll</span>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="content-container">
         <main>
             <section id="inicio">
-                <h1>Nikola Tesla <span class="badge">El Genio Visionario</span></h1>
+                <h1 class="reveal">Nikola Tesla <span class="badge">1856 - 1943</span></h1>
                 
-                <div class="img-container">
+                <div class="img-container reveal">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/N.Tesla.JPG/800px-N.Tesla.JPG" alt="Retrato de Nikola Tesla" class="main-img">
                 </div>
-                <p class="img-caption">Nikola Tesla en 1890, fotografía de Napoleon Sarony</p>
+                <p class="img-caption reveal">Nikola Tesla en 1890, fotografía de Napoleon Sarony</p>
                 
-                <p><span class="highlight">Nikola Tesla</span> (en cirílico serbio: Никола Тесла; Smiljan, Imperio austríaco, actual Croacia; 10 de julio de 1856-Nueva York, 7 de enero de 1943) fue un inventor, ingeniero eléctrico y mecánico serbio nacionalizado estadounidense, conocido por sus contribuciones al diseño del moderno suministro de electricidad de corriente alterna (CA).</p>
+                <p class="reveal"><span class="highlight">Nikola Tesla</span> (en cirílico serbio: Никола Тесла; Smiljan, Imperio austríaco, actual Croacia; 10 de julio de 1856-Nueva York, 7 de enero de 1943) fue un inventor, ingeniero eléctrico y mecánico serbio nacionalizado estadounidense, conocido por sus contribuciones al diseño del moderno suministro de electricidad de corriente alterna (CA).</p>
                 
-                <p>Tesla, que nació y se crio en el Imperio austríaco, estudió ingeniería y física en la década de 1870 sin obtener un título, aunque adquirió experiencia práctica a principios de la década de 1880 trabajando en telefonía en la empresa Continental Edison en la nueva industria de la energía eléctrica. En 1884 emigró a los Estados Unidos, donde se nacionalizó ciudadano. Trabajó durante un corto tiempo en Edison Machine Works en Nueva York antes de emprender su propio camino.</p>
+                <p class="reveal">Tesla, que nació y se crio en el Imperio austríaco, estudió ingeniería y física en la década de 1870 sin obtener un título, aunque adquirió experiencia práctica a principios de la década de 1880 trabajando en telefonía en la empresa Continental Edison en la nueva industria de la energía eléctrica. En 1884 emigró a los Estados Unidos, donde se nacionalizó ciudadano. Trabajó durante un corto tiempo en Edison Machine Works en Nueva York antes de emprender su propio camino.</p>
                 
-                <div class="tabs">
+                <div class="tabs reveal">
                     <div class="tab-buttons">
                         <button class="tab-btn active" data-tab="tab1">Datos clave</button>
                         <button class="tab-btn" data-tab="tab2">Logros</button>
@@ -1296,130 +1950,142 @@
                 </div>
             </section>
             
-            <section id="biografia">
-                <h2>Biografía</h2>
+            <section id="biografia" class="section">
+                <div class="section-header reveal">
+                    <p class="section-subtitle">Historia de vida</p>
+                    <h2 class="section-title">Biografía</h2>
+                    <div class="section-line"></div>
+                </div>
                 
                 <div class="timeline">
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-year">1856</div>
                         <p>Nace en Smiljan, Imperio austríaco (actual Croacia), hijo de un sacerdote ortodoxo serbio y una madre inventora de pequeños aparatos domésticos. Su madre, Đuka Mandić, fue una gran influencia en su vida creativa.</p>
                     </div>
                     
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-year">1875</div>
                         <p>Comienza sus estudios en la Universidad Politécnica de Graz, donde desarrolla un interés especial por la física y la electricidad. Allí observa por primera vez la Gramme Dynamo y concibe la idea del motor de inducción.</p>
                     </div>
                     
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-year">1882</div>
                         <p>Trabaja en la Continental Edison Company en París, donde diseña mejoras para los equipos eléctricos de Edison. Aquí concibe la idea del motor de inducción mientras caminaba por un parque.</p>
                     </div>
                     
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-year">1884</div>
                         <p>Emigra a los Estados Unidos con poco más que una carta de recomendación para Thomas Edison. La carta decía: "Conozco a dos grandes hombres, y usted es uno de ellos; el otro es este joven".</p>
                     </div>
                     
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-year">1887</div>
                         <p>Desarrolla el principio de su motor de inducción y comienza a trabajar con George Westinghouse, quien compra sus patentes de CA por $60,000 más regalías.</p>
                     </div>
                     
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-year">1893</div>
                         <p>En la Exposición Mundial Colombina de Chicago, demuestra el sistema de corriente alterna, asegurando su adopción como estándar mundial. Ilumina la feria con 100,000 bombillas, algo nunca antes visto.</p>
                     </div>
                     
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-year">1899</div>
                         <p>Establece un laboratorio en Colorado Springs para experimentar con electricidad de alto voltaje y alta frecuencia. Crea relámpagos artificiales de 40 metros y desarrolla la bobina Tesla de gran tamaño.</p>
                     </div>
                     
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-year">1901</div>
                         <p>Comienza la construcción de la Wardenclyffe Tower en Long Island, diseñada para la transmisión inalámbrica de energía e información a través del mundo. J.P. Morgan financia inicialmente el proyecto con $150,000.</p>
                     </div>
                     
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-year">1915</div>
                         <p>Se informa que Tesla y Edison compartirían el Premio Nobel de Física, pero el premio fue otorgado a otros. Se especula que Tesla rechazó compartirlo con Edison debido a su rivalidad.</p>
                     </div>
                     
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-year">1934</div>
                         <p>Anuncia un "rayo de la muerte" (rayo de partículas cargadas) que, según él, podría derribar aviones a 400 km de distancia. Atrae la atención de gobiernos pero nunca se desarrolla completamente.</p>
                     </div>
                     
-                    <div class="timeline-item">
+                    <div class="timeline-item reveal">
                         <div class="timeline-year">1943</div>
                         <p>Fallece en la habitación 3327 del New Yorker Hotel a los 86 años. Su funeral tuvo lugar en la Catedral de San Juan el Divino en Nueva York, con más de 2,000 asistentes.</p>
                     </div>
                 </div>
                 
-                <h3>Personalidad y vida personal</h3>
-                <p>Tesla era conocido por su excentricidad y sus peculiares hábitos. Era vegetariano en sus últimos años, afirmando que esta dieta mejoraba sus capacidades cognitivas. También tenía una memoria fotográfica excepcional y podía visualizar inventos complejos en su mente antes de construirlos.</p>
+                <h3 class="reveal">Personalidad y vida personal</h3>
+                <p class="reveal">Tesla era conocido por su excentricidad y sus peculiares hábitos. Era vegetariano en sus últimos años, afirmando que esta dieta mejoraba sus capacidades cognitivas. También tenía una memoria fotográfica excepcional y podía visualizar inventos complejos en su mente antes de construirlos.</p>
                 
-                <p>Aunque era sociable y encantador en sus años jóvenes, con el tiempo se volvió más solitario y excéntrico. Nunca se casó, afirmando que su celibato ayudaba a sus habilidades científicas. Sufrió de trastorno obsesivo-compulsivo, con una fijación por el número tres y una aversión extrema a los gérmenes. Siempre calculaba el volumen de los alimentos y bebidas que consumía, y usaba 18 servilletas para limpiar su vajilla.</p>
+                <p class="reveal">Aunque era sociable y encantador en sus años jóvenes, con el tiempo se volvió más solitario y excéntrico. Nunca se casó, afirmando que su celibato ayudaba a sus habilidades científicas. Sufrió de trastorno obsesivo-compulsivo, con una fijación por el número tres y una aversión extrema a los gérmenes. Siempre calculaba el volumen de los alimentos y bebidas que consumía, y usaba 18 servilletas para limpiar su vajilla.</p>
             </section>
             
-            <section id="inventos">
-                <h2>Inventos y Contribuciones Científicas</h2>
+            <section id="inventos" class="section">
+                <div class="section-header reveal">
+                    <p class="section-subtitle">Contribuciones científicas</p>
+                    <h2 class="section-title">Inventos y Contribuciones</h2>
+                    <div class="section-line"></div>
+                </div>
                 
                 <div class="inventions-grid">
-                    <div class="invention-card">
+                    <div class="invention-card reveal">
                         <h4><i class="fas fa-bolt"></i> Corriente Alterna</h4>
                         <p>Sistema polifásico de distribución eléctrica que se convirtió en el estándar mundial, superando el sistema de corriente continua de Edison. Permitió la transmisión de energía a largas distancias con menores pérdidas.</p>
                     </div>
                     
-                    <div class="invention-card">
+                    <div class="invention-card reveal">
                         <h4><i class="fas fa-cogs"></i> Motor de Inducción</h4>
                         <p>Motor eléctrico que funciona con corriente alterna, fundamental para la industrialización del siglo XX. Transformó la industria al proporcionar una fuente de energía rotativa eficiente y confiable.</p>
                     </div>
                     
-                    <div class="invention-card">
+                    <div class="invention-card reveal">
                         <h4><i class="fas fa-fire"></i> Bobina de Tesla</h4>
                         <p>Transformador resonante que produce corrientes de alto voltaje y alta frecuencia, utilizada en radio, televisión y equipos médicos. Capaz de crear espectaculares descargas eléctricas.</p>
                     </div>
                     
-                    <div class="invention-card">
+                    <div class="invention-card reveal">
                         <h4><i class="fas fa-satellite-dish"></i> Radio</h4>
                         <p>Aunque Marconi es más conocido, Tesla patentó tecnología fundamental para la radio antes que él. La Corte Suprema de EE.UU. reconoció sus patentes en 1943, poco después de su muerte.</p>
                     </div>
                     
-                    <div class="invention-card">
+                    <div class="invention-card reveal">
                         <h4><i class="fas fa-gamepad"></i> Control Remoto</h4>
                         <p>Demostró el primer barco controlado por radio en 1898 en el Madison Square Garden, sentando las bases para el control remoto moderno, drones y vehículos no tripulados.</p>
                     </div>
                     
-                    <div class="invention-card">
+                    <div class="invention-card reveal">
                         <h4><i class="fas fa-wifi"></i> Energía Inalámbrica</h4>
                         <p>Experimentó con la transmisión de energía eléctrica sin cables, un concepto que todavía se investiga hoy. Soñaba con un mundo donde la energía fuera libre y accesible para todos.</p>
                     </div>
                     
-                    <div class="invention-card">
+                    <div class="invention-card reveal">
                         <h4><i class="fas fa-lightbulb"></i> Lámpara Fluorescente</h4>
                         <p>Desarrolló lámparas de neón y fluorescentes antes de que fueran comercializadas, demostrando cómo los gases podían iluminarse con campos eléctricos de alta frecuencia.</p>
                     </div>
                     
-                    <div class="invention-card">
+                    <div class="invention-card reveal">
                         <h4><i class="fas fa-turbine"></i> Turbina Tesla</h4>
                         <p>Turbina sin álabes que utiliza el efecto de capa límite en lugar del impacto de fluido sobre álabes, con una eficiencia notablemente alta para su época.</p>
                     </div>
                 </div>
                 
-                <h3>La "Guerra de las Corrientes"</h3>
-                <p>La Guerra de las Corrientes fue una disputa entre Thomas Edison (que promovía la corriente continua) y George Westinghouse/Tesla (que promovían la corriente alterna) sobre qué sistema debería ser el estándar para la transmisión de energía eléctrica.</p>
+                <h3 class="reveal">La "Guerra de las Corrientes"</h3>
+                <p class="reveal">La Guerra de las Corrientes fue una disputa entre Thomas Edison (que promovía la corriente continua) y George Westinghouse/Tesla (que promovían la corriente alterna) sobre qué sistema debería ser el estándar para la transmisión de energía eléctrica.</p>
                 
-                <p>Edison lanzó una campaña de desprestigio contra la corriente alterna, argumentando que era peligrosa. Incluso promovió el uso de la silla eléctrica (que usaba CA) para asociar la corriente alterna con la muerte. Sin embargo, las ventajas técnicas de la CA para la transmisión a larga distancia finalmente prevalecieron, y el sistema de Tesla se convirtió en el estándar mundial.</p>
+                <p class="reveal">Edison lanzó una campaña de desprestigio contra la corriente alterna, argumentando que era peligrosa. Incluso promovió el uso de la silla eléctrica (que usaba CA) para asociar la corriente alterna con la muerte. Sin embargo, las ventajas técnicas de la CA para la transmisión a larga distancia finalmente prevalecieron, y el sistema de Tesla se convirtió en el estándar mundial.</p>
                 
-                <p>Esta guerra comercial y tecnológica definió el futuro de la distribución eléctrica y dejó a Tesla en una posición financiera difícil, a pesar de la victoria técnica de su sistema.</p>
+                <p class="reveal">Esta guerra comercial y tecnológica definió el futuro de la distribución eléctrica y dejó a Tesla en una posición financiera difícil, a pesar de la victoria técnica de su sistema.</p>
             </section>
             
-            <section id="logros">
-                <h2>Logros y Reconocimientos</h2>
+            <section id="logros" class="section">
+                <div class="section-header reveal">
+                    <p class="section-subtitle">Reconocimientos</p>
+                    <h2 class="section-title">Logros y Reconocimientos</h2>
+                    <div class="section-line"></div>
+                </div>
                 
                 <div class="achievements">
-                    <div class="achievement-card">
+                    <div class="achievement-card reveal">
                         <div class="achievement-icon">
                             <i class="fas fa-award"></i>
                         </div>
@@ -1427,7 +2093,7 @@
                         <p>Recibió la Medalla Edison de la IEEE en 1917, uno de los más altos honores en ingeniería eléctrica.</p>
                     </div>
                     
-                    <div class="achievement-card">
+                    <div class="achievement-card reveal">
                         <div class="achievement-icon">
                             <i class="fas fa-university"></i>
                         </div>
@@ -1435,7 +2101,7 @@
                         <p>Recibió doctorados honorarios de universidades como Columbia, Yale y la Universidad de París.</p>
                     </div>
                     
-                    <div class="achievement-card">
+                    <div class="achievement-card reveal">
                         <div class="achievement-icon">
                             <i class="fas fa-rocket"></i>
                         </div>
@@ -1443,7 +2109,7 @@
                         <p>La unidad de densidad de flujo magnético en el SI se llama "tesla" (T) en su honor.</p>
                     </div>
                     
-                    <div class="achievement-card">
+                    <div class="achievement-card reveal">
                         <div class="achievement-icon">
                             <i class="fas fa-car"></i>
                         </div>
@@ -1452,16 +2118,20 @@
                     </div>
                 </div>
                 
-                <p>Además de estos reconocimientos, Tesla fue miembro de numerosas sociedades científicas y recibió invitaciones para dar conferencias en las instituciones más prestigiosas del mundo. Aunque murió en relativa oscuridad y pobreza, su legado ha crecido exponencialmente en las décadas posteriores a su muerte.</p>
+                <p class="reveal">Además de estos reconocimientos, Tesla fue miembro de numerosas sociedades científicas y recibió invitaciones para dar conferencias en las instituciones más prestigiosas del mundo. Aunque murió en relativa oscuridad y pobreza, su legado ha crecido exponencialmente en las décadas posteriores a su muerte.</p>
             </section>
             
-            <section id="legado">
-                <h2>Legado e Influencia</h2>
+            <section id="legado" class="section">
+                <div class="section-header reveal">
+                    <p class="section-subtitle">Impacto histórico</p>
+                    <h2 class="section-title">Legado e Influencia</h2>
+                    <div class="section-line"></div>
+                </div>
                 
-                <p>El legado de Tesla es inmenso, aunque no siempre fue reconocido durante su vida. Sus contribuciones sentaron las bases para el sistema eléctrico moderno y numerosas tecnologías que damos por sentadas hoy.</p>
+                <p class="reveal">El legado de Tesla es inmenso, aunque no siempre fue reconocido durante su vida. Sus contribuciones sentaron las bases para el sistema eléctrico moderno y numerosas tecnologías que damos por sentadas hoy.</p>
                 
-                <h3>Reconocimientos póstumos</h3>
-                <ul>
+                <h3 class="reveal">Reconocimientos póstumos</h3>
+                <ul class="reveal">
                     <li>La unidad de densidad de flujo magnético en el Sistema Internacional de Unidades se llama <span class="highlight">tesla</span> (símbolo T) en su honor.</li>
                     <li>El cráter lunar Tesla y el asteroide (2244) Tesla llevan su nombre.</li>
                     <li>En 2003, Elon Musk nombró a su empresa de coches eléctricos Tesla, Inc. en su honor.</li>
@@ -1471,48 +2141,52 @@
                     <li>Su imagen aparece en el billete de 100 dinares serbios.</li>
                 </ul>
                 
-                <h3>En la cultura popular</h3>
-                <p>Tesla ha sido representado en numerosas películas, series de televisión, libros y cómics. A menudo se le retrata como el "científico loco" arquetípico, aunque esta representación simplifica en exceso su compleja personalidad y contribuciones.</p>
+                <h3 class="reveal">En la cultura popular</h3>
+                <p class="reveal">Tesla ha sido representado en numerosas películas, series de televisión, libros y cómics. A menudo se le retrata como el "científico loco" arquetípico, aunque esta representación simplifica en exceso su compleja personalidad y contribuciones.</p>
                 
-                <p>En los últimos años, ha habido un resurgimiento del interés por Tesla, con documentales, biografías y exposiciones dedicadas a su vida y trabajo, corrigiendo en parte el olvido histórico que sufrió en comparación con figuras como Edison.</p>
+                <p class="reveal">En los últimos años, ha habido un resurgimiento del interés por Tesla, con documentales, biografías y exposiciones dedicadas a su vida y trabajo, corrigiendo en parte el olvido histórico que sufrió en comparación con figuras como Edison.</p>
                 
-                <p>Hoy, Tesla es visto como un visionario que anticipó muchas tecnologías del siglo XXI, desde la comunicación inalámbrica hasta las energías renovables y los vehículos eléctricos.</p>
+                <p class="reveal">Hoy, Tesla es visto como un visionario que anticipó muchas tecnologías del siglo XXI, desde la comunicación inalámbrica hasta las energías renovables y los vehículos eléctricos.</p>
             </section>
             
-            <section id="galeria">
-                <h2>Galería Visual</h2>
-                <p>Una colección de imágenes históricas que documentan la vida, inventos y legado de Nikola Tesla.</p>
+            <section id="galeria" class="section">
+                <div class="section-header reveal">
+                    <p class="section-subtitle">Documentación visual</p>
+                    <h2 class="section-title">Galería Visual</h2>
+                    <div class="section-line"></div>
+                </div>
+                <p class="reveal">Una colección de imágenes históricas que documentan la vida, inventos y legado de Nikola Tesla.</p>
                 
                 <div class="gallery">
-                    <div class="gallery-item">
+                    <div class="gallery-item reveal">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Tesla_colorado.jpg" alt="Tesla en su laboratorio de Colorado Springs">
                     </div>
                     
-                    <div class="gallery-item">
+                    <div class="gallery-item reveal">
                         <img src="https://www.sectorelectricidad.com/wp-content/uploads/2014/05/tesla-electricidad-inalambrica7.gif" alt="Experimento de transmisión inalámbrica de energía">
                     </div>
                     
-                    <div class="gallery-item">
+                    <div class="gallery-item reveal">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Tesla_Broadcast_Tower_1904.jpeg" alt="Torre Wardenclyffe">
                     </div>
                     
-                    <div class="gallery-item">
+                    <div class="gallery-item reveal">
                         <img src="https://content-historia.nationalgeographic.com.es/medio/2024/07/10/nikola-tesla_00000000_df1dc55d_240710162850_1280x1009.jpg" alt="Tesla pensativo">
                     </div>
                     
-                    <div class="gallery-item">
+                    <div class="gallery-item reveal">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/d/dc/TeslaOscillator.png" alt="Oscilador mecánico de Tesla">
                     </div>
                     
-                    <div class="gallery-item">
+                    <div class="gallery-item reveal">
                         <img src="https://www.endesa.com/content/dam/endesa-com/home/la-cara-e/autores/grafico%20nikola%20tesla.jpg.resize.414.250.center.center.jpeg" alt="Tesla con su equipo">
                     </div>
                     
-                    <div class="gallery-item">
+                    <div class="gallery-item reveal">
                         <img src="https://npr.brightspotcdn.com/dims4/default/1218f68/2147483647/strip/true/crop/475x608+0+0/resize/880x1126!/quality/90/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Flegacy%2Fsites%2Fkwgs%2Ffiles%2F201307%2Fnikola-tesla-with-lamp.jpg" alt="Tesla pensando">
                     </div>
                     
-                    <div class="gallery-item">
+                    <div class="gallery-item reveal">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/7/79/Tesla_circa_1890.jpeg" alt="Tesla en su laboratorio">
                     </div>
                 </div>
@@ -1521,8 +2195,8 @@
         
         <!-- Sidebar -->
         <aside>
-            <h3>Información Rápida</h3>
-            <table class="info-table">
+            <h3 class="reveal">Información Rápida</h3>
+            <table class="info-table reveal">
                 <tr>
                     <td><strong>Nombre</strong></td>
                     <td>Nikola Tesla</td>
@@ -1553,8 +2227,8 @@
                 </tr>
             </table>
             
-            <h3>Patentes Destacadas</h3>
-            <ul>
+            <h3 class="reveal">Patentes Destacadas</h3>
+            <ul class="reveal">
                 <li>Motor de CA (US381968, 1888)</li>
                 <li>Sistema de transmisión eléctrica (US390721, 1888)</li>
                 <li>Bobina de Tesla (US454622, 1891)</li>
@@ -1563,8 +2237,8 @@
                 <li>Control remoto (US613809, 1898)</li>
             </ul>
             
-            <h3>Relaciones Clave</h3>
-            <ul>
+            <h3 class="reveal">Relaciones Clave</h3>
+            <ul class="reveal">
                 <li><strong>Thomas Edison:</strong> Empleador y luego rival en la Guerra de las Corrientes</li>
                 <li><strong>George Westinghouse:</strong> Socio comercial que compró sus patentes de CA</li>
                 <li><strong>J.P. Morgan:</strong> Financiero inicial de la Torre Wardenclyffe</li>
@@ -1572,52 +2246,59 @@
                 <li><strong>Robert Underwood Johnson:</strong> Editor que ayudó a popularizar su trabajo</li>
             </ul>
             
-            <div class="img-container">
+            <div class="img-container reveal">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/TeslaSignature.svg/2560px-TeslaSignature.svg.png" alt="Firma de Nikola Tesla" style="width: 80%;">
             </div>
-            <p class="img-caption">Firma de Nikola Tesla</p>
+            <p class="img-caption reveal">Firma de Nikola Tesla</p>
             
-            <button class="btn" id="quizBtn">Probar Cuestionario Tesla</button>
-            <button class="btn" id="sparkBtn" style="margin-top: 15px; width: 100%;">Efecto Especial</button>
+            <button class="btn btn-primary reveal" id="sidebarQuizBtn" style="width: 100%; margin-top: 20px;">
+                <span class="btn-shine"></span>
+                <span>Probar Cuestionario</span>
+            </button>
+            <button class="btn btn-secondary reveal" id="sparkBtn" style="width: 100%; margin-top: 15px;">
+                <span class="btn-shine"></span>
+                <span>Efecto Especial ⚡</span>
+            </button>
         </aside>
     </div>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <h4>Sobre TeslaWiki</h4>
-                <p>TeslaWiki es un proyecto dedicado a preservar y difundir el legado de Nikola Tesla, con información verificada y accesible para todos.</p>
-                <p>Este sitio es educativo y sin fines de lucro, creado por entusiastas de la historia de la ciencia y la tecnología.</p>
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2 class="text-gradient">Nikola Tesla</h2>
+                    <p>TeslaWiki es un proyecto dedicado a preservar y difundir el legado de Nikola Tesla, con información verificada y accesible para todos.</p>
+                    <p>Este sitio es educativo y sin fines de lucro, creado por entusiastas de la historia de la ciencia y la tecnología.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Enlaces Relacionados</h3>
+                    <ul>
+                        <li><a href="https://www.teslasociety.com/" target="_blank"><span>→</span> Tesla Society</a></li>
+                        <li><a href="https://tesla-museum.org/en/home/" target="_blank"><span>→</span> Museo de Tesla en Belgrado</a></li>
+                        <li><a href="https://teslasciencecenter.org/" target="_blank"><span>→</span> Centro de Ciencias Tesla</a></li>
+                        <li><a href="https://www.loc.gov/collections/nikola-tesla-papers/about-this-collection/" target="_blank"><span>→</span> Papeles de Tesla en la Biblioteca del Congreso</a></li>
+                        <li><a href="https://www.ieee.org/" target="_blank"><span>→</span> IEEE</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Referencias</h3>
+                    <ul>
+                        <li><a href="#"><span>→</span> Biblioteca del Congreso de EE.UU.</a></li>
+                        <li><a href="#"><span>→</span> Museo Nikola Tesla en Belgrado</a></li>
+                        <li><a href="#"><span>→</span> Biografías académicas autorizadas</a></li>
+                        <li><a href="#"><span>→</span> Patentes originales de Tesla</a></li>
+                        <li><a href="#"><span>→</span> Archivos históricos de la IEEE</a></li>
+                    </ul>
+                </div>
             </div>
-            
-            <div class="footer-col">
-                <h4>Enlaces Relacionados</h4>
-                <ul>
-                    <li><a href="https://www.teslasociety.com/" target="_blank">Tesla Society</a></li>
-                    <li><a href="https://tesla-museum.org/en/home/" target="_blank">Museo de Tesla en Belgrado</a></li>
-                    <li><a href="https://teslasciencecenter.org/" target="_blank">Centro de Ciencias Tesla</a></li>
-                    <li><a href="https://www.loc.gov/collections/nikola-tesla-papers/about-this-collection/" target="_blank">Papeles de Tesla en la Biblioteca del Congreso</a></li>
-                    <li><a href="https://www.ieee.org/" target="_blank">IEEE (Institute of Electrical and Electronics Engineers)</a></li>
-                </ul>
+
+            <div class="footer-bottom">
+                <p>© 2026 TeslaWiki. Este sitio fue creado por Jose Fernandez y es para fines educativos. Todas las imágenes son de dominio público o se utilizan bajo licencias permisivas.</p>
+                <p>Diseñado con <span class="footer-heart">❤️</span> para honrar el legado de Nikola Tesla | <span id="currentYear"></span></p>
             </div>
-            
-            <div class="footer-col">
-                <h4>Referencias</h4>
-                <p>La información en este sitio proviene de:</p>
-                <ul>
-                    <li>Biblioteca del Congreso de EE.UU.</li>
-                    <li>Museo Nikola Tesla en Belgrado</li>
-                    <li>Biografías académicas autorizadas</li>
-                    <li>Patentes originales de Tesla</li>
-                    <li>Archivos históricos de la IEEE</li>
-                </ul>
-            </div>
-        </div>
-        
-        <div class="copyright">
-            <p>&copy; 2026 TeslaWiki. Este sitio fue creado por Jose Fernandez y es para fines educativos. Todas las imágenes son de dominio público o se utilizan bajo licencias permisivas.</p>
-            <p>Diseñado con <i class="fas fa-heart" style="color: #e74c3c;"></i> para honrar el legado de Nikola Tesla | <span id="currentYear"></span></p>
         </div>
     </footer>
 
@@ -1628,16 +2309,252 @@
     </div>
 
     <!-- Botón para ir arriba -->
-    <div class="scroll-indicator" id="scrollTopBtn">
+    <div class="scroll-indicator-btn" id="scrollTopBtn">
         <i class="fas fa-arrow-up"></i>
     </div>
 
     <!-- JavaScript -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Tabs functionality
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabPanes = document.querySelectorAll('.tab-pane');
+        // ============================================
+        // UTILITY FUNCTIONS
+        // ============================================
+        
+        const $ = (selector) => document.querySelector(selector);
+        const $$ = (selector) => document.querySelectorAll(selector);
+
+        // ============================================
+        // LOADING SCREEN
+        // ============================================
+        
+        (function initLoading() {
+            const loadingScreen = $('#loading-screen');
+            const loadingBar = $('#loading-bar');
+            const loadingPercent = $('#loading-percent');
+            let progress = 0;
+
+            const interval = setInterval(() => {
+                progress += Math.random() * 15;
+                if (progress > 100) progress = 100;
+                
+                loadingBar.style.width = progress + '%';
+                loadingPercent.textContent = Math.round(progress) + '%';
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        loadingScreen.classList.add('hidden');
+                    }, 500);
+                }
+            }, 100);
+        })();
+
+        // ============================================
+        // CUSTOM CURSOR
+        // ============================================
+        
+        (function initCursor() {
+            const cursor = $('#cursor');
+            const cursorTrail = $('#cursor-trail');
+            let mouseX = 0, mouseY = 0;
+            let trailX = 0, trailY = 0;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                cursor.style.left = mouseX + 'px';
+                cursor.style.top = mouseY + 'px';
+            });
+
+            // Smooth trail
+            function animateTrail() {
+                trailX += (mouseX - trailX) * 0.15;
+                trailY += (mouseY - trailY) * 0.15;
+                cursorTrail.style.left = trailX + 'px';
+                cursorTrail.style.top = trailY + 'px';
+                requestAnimationFrame(animateTrail);
+            }
+            animateTrail();
+
+            // Hover states
+            const hoverElements = $$('a, button, .gallery-item, .invention-card, .achievement-card, .timeline-item');
+            hoverElements.forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+            });
+
+            // Click state
+            document.addEventListener('mousedown', () => cursor.classList.add('clicking'));
+            document.addEventListener('mouseup', () => cursor.classList.remove('clicking'));
+        })();
+
+        // ============================================
+        // SCROLL PROGRESS BAR
+        // ============================================
+        
+        (function initScrollProgress() {
+            const progressBar = $('#scroll-progress-bar');
+            
+            window.addEventListener('scroll', () => {
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrolled = (window.scrollY / scrollHeight) * 100;
+                progressBar.style.width = scrolled + '%';
+            });
+        })();
+
+        // ============================================
+        // STICKY HEADER
+        // ============================================
+        
+        (function initStickyHeader() {
+            const header = $('#header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        })();
+
+        // ============================================
+        // HAMBURGER MENU
+        // ============================================
+        
+        (function initHamburgerMenu() {
+            const hamburger = $('#hamburger');
+            const mobileMenu = $('#mobile-menu');
+            const mobileLinks = $$('#mobile-menu a');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        })();
+
+        // ============================================
+        // TYPING EFFECT
+        // ============================================
+        
+        (function initTypingEffect() {
+            const text = 'Nikola Tesla - El Genio Visionario';
+            const typedText = $('#typed-text');
+            let index = 0;
+
+            function type() {
+                if (index <= text.length) {
+                    typedText.textContent = text.slice(0, index);
+                    index++;
+                    setTimeout(type, 100);
+                }
+            }
+
+            setTimeout(type, 1000);
+        })();
+
+        // ============================================
+        // PARTICLE CANVAS
+        // ============================================
+        
+        (function initParticles() {
+            const canvas = $('#particles');
+            const ctx = canvas.getContext('2d');
+            
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+
+            const particles = [];
+            const particleCount = 60;
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 0.5,
+                    vy: (Math.random() - 0.5) * 0.5,
+                    size: Math.random() * 3 + 1,
+                    hue: 180 + Math.random() * 60,
+                    alpha: 0.3 + Math.random() * 0.5
+                });
+            }
+
+            function animate() {
+                ctx.fillStyle = 'rgba(3, 7, 18, 0.1)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+                particles.forEach((p, i) => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+
+                    // Bounce
+                    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                    // Draw particle
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `hsla(${p.hue}, 70%, 60%, ${p.alpha})`;
+                    ctx.fill();
+
+                    // Connect nearby particles
+                    particles.slice(i + 1).forEach(p2 => {
+                        const d = Math.sqrt((p.x - p2.x) ** 2 + (p.y - p2.y) ** 2);
+                        if (d < 120) {
+                            ctx.beginPath();
+                            ctx.moveTo(p.x, p.y);
+                            ctx.lineTo(p2.x, p2.y);
+                            ctx.strokeStyle = `rgba(0, 188, 212, ${0.2 * (1 - d / 120)})`;
+                            ctx.stroke();
+                        }
+                    });
+                });
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        })();
+
+        // ============================================
+        // REVEAL ON SCROLL
+        // ============================================
+        
+        (function initRevealOnScroll() {
+            const reveals = $$('.reveal');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('active');
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            reveals.forEach(el => observer.observe(el));
+        })();
+
+        // ============================================
+        // TABS FUNCTIONALITY
+        // ============================================
+        
+        (function initTabs() {
+            const tabButtons = $$('.tab-btn');
+            const tabPanes = $$('.tab-pane');
             
             tabButtons.forEach(button => {
                 button.addEventListener('click', function() {
@@ -1652,50 +2569,51 @@
                     document.getElementById(tabId).classList.add('active');
                 });
             });
+        })();
+
+        // ============================================
+        // IMAGE GALLERY MODAL
+        // ============================================
+        
+        (function initLightbox() {
+            const modal = $('#imageModal');
+            const modalImage = $('#modalImage');
+            const modalClose = $('#modalClose');
             
-            // Search functionality
-            const searchInput = document.getElementById('searchInput');
-            const searchBtn = document.getElementById('searchBtn');
-            
-            searchBtn.addEventListener('click', performSearch);
-            searchInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter') {
-                    performSearch();
+            $$('.gallery-item img').forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.style.display = 'flex';
+                    modalImage.src = this.src;
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            modalClose.addEventListener('click', closeLightbox);
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeLightbox();
                 }
             });
             
-            function performSearch() {
-                const searchTerm = searchInput.value.toLowerCase().trim();
-                if (searchTerm) {
-                    const headings = document.querySelectorAll('h1, h2, h3, h4, p, li, td');
-                    
-                    let found = false;
-                    headings.forEach(element => {
-                        if (element.innerText.toLowerCase().includes(searchTerm)) {
-                            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                            
-                            // Create a highlight effect
-                            const originalBg = element.style.backgroundColor;
-                            element.style.backgroundColor = 'rgba(255, 255, 0, 0.4)';
-                            element.style.transition = 'background-color 0.5s';
-                            
-                            setTimeout(() => {
-                                element.style.backgroundColor = originalBg;
-                            }, 3000);
-                            
-                            found = true;
-                        }
-                    });
-                    
-                    if (!found) {
-                        alert('No se encontraron resultados para: ' + searchTerm);
-                    }
-                }
+            function closeLightbox() {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
             }
             
-            // Quiz functionality
-            const quizBtn = document.getElementById('quizBtn');
-            quizBtn.addEventListener('click', function() {
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeLightbox();
+            });
+        })();
+
+        // ============================================
+        // QUIZ FUNCTIONALITY
+        // ============================================
+        
+        (function initQuiz() {
+            const quizBtn = $('#quizBtn');
+            const sidebarQuizBtn = $('#sidebarQuizBtn');
+            
+            function startQuiz() {
                 const questions = [
                     {
                         question: "¿En qué año nació Nikola Tesla?",
@@ -1751,49 +2669,34 @@
                 }
                 
                 alert(message);
-            });
+            }
             
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('nav a').forEach(anchor => {
+            quizBtn.addEventListener('click', startQuiz);
+            sidebarQuizBtn.addEventListener('click', startQuiz);
+        })();
+
+        // ============================================
+        // SMOOTH SCROLL FOR NAV LINKS
+        // ============================================
+        
+        (function initSmoothScroll() {
+            $$('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 120,
-                            behavior: 'smooth'
-                        });
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
             });
-            
-            // Image gallery modal
-            const modal = document.getElementById('imageModal');
-            const modalImage = document.getElementById('modalImage');
-            const modalClose = document.getElementById('modalClose');
-            
-            document.querySelectorAll('.gallery-item img').forEach(img => {
-                img.addEventListener('click', function() {
-                    modal.style.display = 'flex';
-                    modalImage.src = this.src;
-                });
-            });
-            
-            modalClose.addEventListener('click', function() {
-                modal.style.display = 'none';
-            });
-            
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                }
-            });
-            
-            // Scroll to top button
-            const scrollTopBtn = document.getElementById('scrollTopBtn');
+        })();
+
+        // ============================================
+        // SCROLL TO TOP BUTTON
+        // ============================================
+        
+        (function initScrollTop() {
+            const scrollTopBtn = $('#scrollTopBtn');
             
             window.addEventListener('scroll', function() {
                 if (window.pageYOffset > 300) {
@@ -1809,23 +2712,31 @@
                     behavior: 'smooth'
                 });
             });
-            
-            // Explore button in parallax section
-            const exploreBtn = document.getElementById('exploreBtn');
+        })();
+
+        // ============================================
+        // EXPLORE BUTTON
+        // ============================================
+        
+        (function initExploreButton() {
+            const exploreBtn = $('#exploreBtn');
             exploreBtn.addEventListener('click', function() {
                 document.querySelector('#inicio').scrollIntoView({
                     behavior: 'smooth'
                 });
             });
-            
-            // Spark effect button
-            const sparkBtn = document.getElementById('sparkBtn');
-            sparkBtn.addEventListener('click', function() {
-                createSparks();
-            });
+        })();
+
+        // ============================================
+        // SPARK EFFECT BUTTON
+        // ============================================
+        
+        (function initSparkEffect() {
+            const sparkBtn = $('#sparkBtn');
+            sparkBtn.addEventListener('click', createSparks);
             
             function createSparks() {
-                const colors = ['#00bcd4', '#4a148c', '#1a237e', '#80deea'];
+                const colors = ['#00bcd4', '#8b5cf6', '#ec4899', '#22d3ee'];
                 
                 for (let i = 0; i < 20; i++) {
                     const spark = document.createElement('div');
@@ -1838,11 +2749,15 @@
                     // Random color
                     const color = colors[Math.floor(Math.random() * colors.length)];
                     
+                    spark.style.position = 'fixed';
                     spark.style.left = `${x}px`;
                     spark.style.top = `${y}px`;
                     spark.style.backgroundColor = color;
                     spark.style.width = `${Math.random() * 30 + 10}px`;
                     spark.style.height = spark.style.width;
+                    spark.style.borderRadius = '50%';
+                    spark.style.pointerEvents = 'none';
+                    spark.style.zIndex = '9999';
                     
                     document.body.appendChild(spark);
                     
@@ -1861,70 +2776,66 @@
                     }, 1500);
                 }
             }
-            
-            // Set current year in footer
+        })();
+
+        // ============================================
+        // MAGNETIC BUTTONS
+        // ============================================
+        
+        (function initMagneticButtons() {
+            const magneticElements = $$('[data-magnetic]');
+
+            magneticElements.forEach(el => {
+                el.addEventListener('mousemove', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    
+                    this.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+                });
+
+                el.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translate(0, 0)';
+                });
+            });
+        })();
+
+        // ============================================
+        // BUTTON RIPPLE EFFECT
+        // ============================================
+        
+        (function initRipple() {
+            const buttons = $$('.btn');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const rect = this.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    const ripple = document.createElement('span');
+                    ripple.className = 'btn-ripple';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+
+                    this.appendChild(ripple);
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+        })();
+
+        // ============================================
+        // SET CURRENT YEAR IN FOOTER
+        // ============================================
+        
+        (function setCurrentYear() {
             document.getElementById('currentYear').textContent = new Date().getFullYear();
-            
-            // Add particles to footer
-            function createParticles() {
-                const footer = document.querySelector('footer');
-                
-                for (let i = 0; i < 15; i++) {
-                    const particle = document.createElement('div');
-                    particle.classList.add('particle');
-                    
-                    // Random size and position
-                    const size = Math.random() * 10 + 5;
-                    const left = Math.random() * 100;
-                    const top = Math.random() * 100;
-                    
-                    particle.style.width = `${size}px`;
-                    particle.style.height = `${size}px`;
-                    particle.style.left = `${left}%`;
-                    particle.style.top = `${top}%`;
-                    particle.style.opacity = Math.random() * 0.5 + 0.1;
-                    
-                    // Add animation
-                    particle.style.animation = `float ${Math.random() * 10 + 10}s infinite ease-in-out`;
-                    particle.style.animationDelay = `${Math.random() * 5}s`;
-                    
-                    footer.appendChild(particle);
-                }
-            }
-            
-            createParticles();
-            
-            // Add hover effects to invention cards with delay
-            const inventionCards = document.querySelectorAll('.invention-card');
-            inventionCards.forEach((card, index) => {
-                card.style.animationDelay = `${index * 0.1}s`;
-            });
-            
-            // Add parallax effect to background
-            window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const parallaxBg = document.querySelector('.parallax-bg');
-                
-                if (parallaxBg) {
-                    parallaxBg.style.transform = `translateY(${scrolled * 0.5}px)`;
-                }
-            });
-            
-            // Add typing effect to search placeholder
-            const searchPlaceholder = "Buscar en TeslaWiki...";
-            let i = 0;
-            
-            function typePlaceholder() {
-                if (i < searchPlaceholder.length) {
-                    searchInput.placeholder = searchPlaceholder.substring(0, i + 1);
-                    i++;
-                    setTimeout(typePlaceholder, 50);
-                }
-            }
-            
-            // Start typing effect after a delay
-            setTimeout(typePlaceholder, 1000);
-        });
+        })();
+
+        console.log('✨ Nikola Tesla Legacy loaded successfully!');
+        console.log('⚡ Modern design with AnimaVerse aesthetics');
+        console.log('🎨 All animations are pure HTML5, CSS3 & JavaScript');
+        console.log('📱 Fully responsive design');
     </script>
 </body>
 </html>
